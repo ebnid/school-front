@@ -45,9 +45,12 @@
             <a href="{{ route('attendence.give') }}" class="border-l cursor-pointer flex items-center text-sm py-1 px-3 hover:bg-gray-700" >
                 Give Attendance
             </a>
-            <a href="{{ route('attendence.create') }}" class="border-l cursor-pointer flex items-center text-sm py-1 px-3 hover:bg-gray-700" >
-                Create Attendance
-            </a>
+
+            @canany(['admin', 'root'])
+                <a href="{{ route('attendence.create') }}" class="border-l cursor-pointer flex items-center text-sm py-1 px-3 hover:bg-gray-700" >
+                    Create Attendance
+                </a>
+            @endcanany
 
             @canany(['admin', 'root'])
                 <a href="{{ route('attendence.create-leave') }}" class="border-l cursor-pointer flex items-center text-sm py-1 px-3 hover:bg-gray-700" >

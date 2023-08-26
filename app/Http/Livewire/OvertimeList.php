@@ -56,14 +56,14 @@ class OvertimeList extends Component
 
         $year = $this->year;
         $month = $this->month;
-        $employee_id = $this->employee_id;
+        $employee_id = $this->employee->id;
 
 
         $query->when($year && $month, function($query) use($year, $month){
             $query->whereMonth('created_at', $month)->whereYear('created_at', $year);
         });
 
-        return $query->where('employee_id', $this->employee->id)->paginate(12);
+        return $query->where('employee_id', $employee_id)->latest()->paginate(12);
 
     }
 
@@ -80,7 +80,7 @@ class OvertimeList extends Component
     {
         $this->year = now()->year;
         $this->month = now()->month;
-        $this->employee = Employee::with('shift', 'user')->where('user_id', auth()->id())->first();
+        $this->employee = auth()->user()->employee;
     }
 
     private function generateYear()
