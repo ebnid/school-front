@@ -20,16 +20,14 @@
                     d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6"
                 />
                 </svg>
-
-                <span class="text-xs font-medium"> 67.81% </span>
             </div>
 
             <div>
-                <strong class="block text-sm font-medium text-gray-500"> Salary </strong>
+                <strong class="block text-sm font-medium text-gray-500">Estimate Salary </strong>
 
                 <p>
-                    <span class="text-2xl font-medium text-gray-900"> $404.32 </span>
-                    <span class="text-xs text-gray-500"> from $240.94 </span>
+                    <span class="text-2xl font-medium text-gray-900"> BDT {{ number_format($salary, 2) }} </span>
+                    <span class="text-xs text-gray-500"> from {{ \Carbon\Carbon::create(now()->year, now()->month, 1)->format('d M Y') }} </span>
                 </p>
             </div>
         </article>
@@ -54,16 +52,14 @@
                     d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6"
                 />
                 </svg>
-
-                <span class="text-xs font-medium"> 67.81% </span>
             </div>
 
             <div>
                 <strong class="block text-sm font-medium text-gray-500"> Withdraw </strong>
 
                 <p>
-                    <span class="text-2xl font-medium text-gray-900"> $404.32 </span>
-                    <span class="text-xs text-gray-500"> from $240.94 </span>
+                    <span class="text-2xl font-medium text-gray-900"> BDT {{ number_format($withdraw, 2) }} </span>
+                    <span class="text-xs text-gray-500"> from {{ \Carbon\Carbon::create(now()->year, now()->month, 1)->format('d M Y') }} </span>
                 </p>
             </div>
         </article>
@@ -88,16 +84,14 @@
                     d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6"
                 />
                 </svg>
-
-                <span class="text-xs font-medium"> 67.81% </span>
             </div>
 
             <div>
                 <strong class="block text-sm font-medium text-gray-500"> Balance </strong>
 
                 <p>
-                    <span class="text-2xl font-medium text-gray-900"> $404.32 </span>
-                    <span class="text-xs text-gray-500"> from $240.94 </span>
+                    <span class="text-2xl font-medium text-gray-900"> BDT {{ number_format($balance, 2) }} </span>
+                    <span class="text-xs text-gray-500"> from {{ \Carbon\Carbon::create(now()->year, now()->month, 1)->format('d M Y') }} </span>
                 </p>
             </div>
         </article>

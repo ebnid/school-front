@@ -17,8 +17,9 @@ return new class extends Migration
             $table->datetime('end_at')->nullable();
             $table->float('overtime')->nullable();
             $table->string('message')->nullable();
-            $table->enum('status', ['pending', 'accepted', 'cancaled'])->defalut('pending')->nullable();
+            $table->enum('status', ['pending', 'accepted', 'cancaled'])->default('pending')->nullable();
             $table->foreignId('attendance_id')->constrained();
+            $table->foreignId('employee_id')->constrained();
             $table->timestamps();
         });
     }
