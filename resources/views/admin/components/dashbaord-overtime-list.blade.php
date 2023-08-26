@@ -27,6 +27,10 @@
                 <tr class="whitespace-nowrap group bg-white border-b dark:bg-gray-800 dark:border-gray-700">
                     <th scope="row" class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">
                         {{ $overtime->created_at->format('d M Y h:i A') }}
+
+                        @if($overtime->created_at->diffInHours() < 12)
+                            <span class="bg-blue-100 text-blue-800 text-xs font-medium mr-2 px-1.5 py-0.5 rounded dark:bg-blue-900 dark:text-blue-300">New</span>
+                        @endif
                     </th>
                     <td class="px-6 py-4">
                         @if($overtime->start_at)
