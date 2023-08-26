@@ -47,6 +47,7 @@ Route::middleware([
     Route::view('/attendences/leave/create', 'admin.pages.attendence.create-leave')->name('attendence.create-leave');
     Route::view('/attendences/leave/create-request-list', 'admin.pages.attendence.create-edit-leave-request-list')->name('attendence.create-edit-leave-request-list');
     Route::view('/attendences/leave/request-list', 'admin.pages.attendence.leave-request-list')->name('attendence.leave-request-list');
+    Route::view('/attendences/overtimes/list', 'admin.pages.attendence.overtime-list')->name('attendence.overtime-list');
 
 
     // Salary

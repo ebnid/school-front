@@ -65,8 +65,14 @@
                 </a>
             @endcanany
 
+            @canany(['admin', 'root'])
+                <a href="{{ route('attendence.overtime-list') }}" class="border-l cursor-pointer flex items-center text-sm py-1 px-3 hover:bg-gray-700" >
+                    Overtime List
+                </a>
+            @endcanany
+
             <a href="{{ route('attendence.all-list') }}" class="border-l cursor-pointer flex items-center text-sm py-1 px-3 hover:bg-gray-700" >
-                Attendacne List
+                Attendance List
             </a>
         </div>
     </div>
