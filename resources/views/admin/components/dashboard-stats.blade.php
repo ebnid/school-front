@@ -23,7 +23,7 @@
             </div>
 
             <div>
-                <strong class="block text-sm font-medium text-gray-500">Estimate Salary </strong>
+                <strong class="block text-sm font-medium text-gray-500">Earning Salary</strong>
 
                 <p>
                     <span class="text-2xl font-medium text-gray-900"> BDT {{ number_format($salary, 2) }} </span>
