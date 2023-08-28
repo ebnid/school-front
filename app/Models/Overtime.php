@@ -5,6 +5,7 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use App\Models\Employee;
+use App\Models\Attendance;
 
 class Overtime extends Model
 {
@@ -21,5 +22,10 @@ class Overtime extends Model
     public function employee()
     {
         return $this->belongsTo(Employee::class);
+    }
+
+    public function attendance()
+    {
+        return $this->belongsTo(Attendance::class);
     }
 }

@@ -6,6 +6,7 @@ use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use LaracraftTech\LaravelDateScopes\DateScopes;
 use App\Models\Employee;
+use App\Models\Overtime;
 
 class Attendance extends Model
 {
@@ -37,6 +38,10 @@ class Attendance extends Model
         return $this->belongsTo(Employee::class);
     }
 
+    public function overtimeList()
+    {
+        return $this->hasMany(Overtime::class);
+    }
 
     public function lateCoverEmployee()
     {
