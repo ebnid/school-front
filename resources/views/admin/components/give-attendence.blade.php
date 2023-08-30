@@ -89,7 +89,7 @@
                     <dt class="font-medium text-gray-900">Leave at</dt>
                     <dd class="text-gray-700 sm:col-span-2">
                         @if($todayAttendance->out_at ?? false)
-                            {{ $todayAttendance->in_at->format('h:i A') }}
+                            {{ $todayAttendance->out_at->format('h:i A') }}
                         @else 
                             N/A
                         @endif

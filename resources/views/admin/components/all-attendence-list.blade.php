@@ -52,6 +52,10 @@
                         </th>
 
                         <th scope="col" class="px-6 py-3">
+                            Name
+                        </th>
+
+                        <th scope="col" class="px-6 py-3">
                             Shift
                         </th>
 
@@ -89,6 +93,9 @@
                                 <span class="bg-yellow-100 text-yellow-800 text-xs font-medium mr-2 px-2.5 py-0.5 rounded dark:bg-yellow-900 dark:text-yellow-300">{{ $attendance->getStatus() }}</span>
                             </div>
                         </td>
+                        <th scope="row" class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">
+                            {{  $attendance->employee->user->name ?? '' }}
+                        </th>
                         <td class="px-6 py-2">
                             <div class="flex flex-col justify-center items-center gap-1">
                                 <span class="bg-blue-100 text-blue-800 text-xs font-medium mr-1 px-2.5 py-0.5 rounded-full dark:bg-blue-900 dark:text-blue-300">{{ $shift->name ?? '' }}</span>

@@ -88,6 +88,8 @@ class GiveAttendence extends Component
                     $prevEmployeeAttendance->save();
                 }
 
+                $this->exitPreviousEmployeeIfHas($this->employee->id, $lateTimeInMinute);
+
                 $this->initialSetup(); 
 
                 return $this->success('Welcome to Ebnhost LTD.','Your presentation is done !');
@@ -110,6 +112,8 @@ class GiveAttendence extends Component
                 $attendence->employee_id = $this->employee->id;
 
                 $attendence->save();
+
+                $this->exitPreviousEmployeeIfHas($this->employee->id);
 
                 $this->initialSetup(); 
 
@@ -155,6 +159,31 @@ class GiveAttendence extends Component
         }
     }
 
+
+    private function exitPreviousEmployeeIfHas($employee_id, $overtime = 0)
+    {
+        $employee = Employee::with('prevEmployee')->find($employee_id);
+
+        $prevEmployee = $employee->prevEmployee;
+
+        if(!$prevEmployee) return;
+
+        $prevEmployeeTodayAttendance = $prevEmployee->todayAttendance();
+
+        if(!$prevEmployeeTodayAttendance) return;
+
+        if($prevEmployeeTodayAttendance->in_at && $prevEmployeeTodayAttendance->out_at) return;
+
+        if(!$overtime){
+            $prevEmployeeTodayAttendance->out_at = $prevEmployee->shift->end_at;
+        }else {
+            $prevEmployeeTodayAttendance->out_at = now();
+            $prevEmployeeTodayAttendance->overtime = $overtime;
+        }
+
+        $prevEmployeeTodayAttendance->save();
+    }
+
     private function countEarlyOrLateMinutes()
     {
         $shift_start = $this->employee->shift->start_at;
@@ -178,6 +207,7 @@ class GiveAttendence extends Component
 
         return $current_time->gt($shift_start);
     }
+    
 
 
     private function countOverTimeOrEarlyLeftTime()
