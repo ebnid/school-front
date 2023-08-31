@@ -3,7 +3,7 @@
 
     <!-- Notice Board -->
     <div class="font-bangla">
-        <h1 class="mb-4 text-center text-2xl font-extrabold leading-none tracking-tight text-gray-900  dark:text-white">{{ $notice->title ?? '' }}</h1>
+        <h1 class="mb-4 text-center text-2xl font-extrabold leading-none tracking-tight text-gray-900 text-blue-600 dark:text-white">{{ $notice->title ?? '' }}</h1>
         <p class="mb-3 text-gray-500 dark:text-gray-400">{{ $notice->description ?? '' }}</p>
         <span class="mb-5 block text-xs" >
             @if($notice)
