@@ -3,9 +3,13 @@
 
     <!-- Notice Board -->
     <div class="font-bangla">
-        <h1 class="mb-4 text-center text-2xl font-extrabold leading-none tracking-tight text-gray-900  dark:text-white">{{ $notice->title }}</h1>
-        <p class="mb-3 text-gray-500 dark:text-gray-400">{{ $notice->description }}</p>
-        <span class="mb-5 block text-xs" >{{ $notice->created_at->format('d M Y h:i A') }}</span>
+        <h1 class="mb-4 text-center text-2xl font-extrabold leading-none tracking-tight text-gray-900  dark:text-white">{{ $notice->title ?? '' }}</h1>
+        <p class="mb-3 text-gray-500 dark:text-gray-400">{{ $notice->description ?? '' }}</p>
+        <span class="mb-5 block text-xs" >
+            @if($notice)
+                {{ $notice->created_at->format('d M Y h:i A') }}
+            @endif
+        </span>
     </div>
 
     <!-- Notice List -->
