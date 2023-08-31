@@ -67,6 +67,8 @@ Route::middleware([
         Route::view('/attendences/leave/create', 'admin.pages.attendence.create-leave')->name('attendence.create-leave');
         Route::view('/attendences/leave/request-list', 'admin.pages.attendence.leave-request-list')->name('attendence.leave-request-list');
 
+        // Notice
+        Route::view('notices/create', 'admin.pages.notice.create')->name('notice.create');
 
     });
 

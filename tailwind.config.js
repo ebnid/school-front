@@ -15,6 +15,7 @@ export default {
         extend: {
             fontFamily: {
                 sans: ['Figtree', ...defaultTheme.fontFamily.sans],
+                bangla: ['Hind Siliguri', ...defaultTheme.fontFamily.sans]
             },
         },
     },

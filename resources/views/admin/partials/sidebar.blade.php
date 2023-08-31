@@ -267,9 +267,13 @@
 
 
         <div x-transition.duration.150ms x-show="isOpen" class="pl-7">
-            <a href="" class="border-l cursor-pointer flex items-center text-sm py-1 px-3 hover:bg-gray-700" >
-                Add
-            </a>
+            
+            @canany(['admin', 'root'])
+                <a href="{{ route('notice.create') }}" class="border-l cursor-pointer flex items-center text-sm py-1 px-3 hover:bg-gray-700" >
+                    Add
+                </a>
+            @endcanany
+
             <a href="" class="border-l cursor-pointer flex items-center text-sm py-1 px-3 hover:bg-gray-700" >
                 List
             </a>
