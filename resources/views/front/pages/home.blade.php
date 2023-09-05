@@ -4,8 +4,8 @@
             <div class="grid grid-cols-1 md:grid-cols-5 gap-5">
                 <div class="col-span-3">
                     @include('front.partials.home-caurosel')
-                    @include('front.partials.photo-gallery')
                     <livewire:front.notice-list />
+                    @include('front.partials.photo-gallery')
                 </div>
                 <div class="col-span-2">
                     @include('front.partials.message-of-principal')
