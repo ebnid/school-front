@@ -13,9 +13,13 @@ return new class extends Migration
     {
         Schema::create('notices', function (Blueprint $table) {
             $table->id();
-            $table->string('title');
-            $table->string('description', 5000);
-            $table->foreignId('employee_id')->nullable()->constrained();
+            $table->string('name', 2048);
+            $table->string('slug', 2300);
+            $table->text('content');
+            $table->integer('order')->nullable();
+            $table->enum('lang', ['bangla', 'english'])->default('bangla');
+            $table->boolean('is_published')->nullable()->default(true);
+            $table->string('cache_key')->nullable();
             $table->timestamps();
         });
     }

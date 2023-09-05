@@ -3,160 +3,119 @@
 namespace App\Http\Livewire;
 
 use Livewire\Component;
-use Livewire\WithPagination;
-use App\Models\Employee;
-use App\Models\Notice;
+use Illuminate\Support\Str;
 use App\Traits\WithSweetAlert;
+use App\Models\Notice;
 
 class CreateEditNotice extends Component
 {
     use WithSweetAlert;
-    use WithPagination;
 
-    public $employees;
     public $is_edit_mode_on = false;
+
+    public $name;
+    public $slug;
+    public $content;
+    public $order;
+    public $is_published;
+    public $lang = 'bangla';
+
     public $notice_id;
 
 
-    public $title;
-    public $description;
-    public $employee_id;
-
-
     protected $rules = [
-        'title' => ['required', 'string', 'max:255'],
-        'description' => ['required', 'string', 'max:5000'],
-        'employee_id' => ['nullable', 'integer']
+        'name' => ['required', 'string'],
+        'slug' => ['required', 'string'],
+        'content' => ['nullable', 'string'],
+        'order' => ['nullable', 'integer'],
+        'is_published' => ['required', 'boolean'],
     ];
-
 
     protected $listeners = [
-        'onNoticeDelete' => 'applyDelete'
+        'onNoticeEdit' => 'enableNoticeEditMode',
     ];
-
-
-    public function mount()
-    {
-        $this->initData();
-    }
 
     public function render()
     {
-        $notices = $this->getNotices();
-        return view('admin.components.create-edit-notice', compact('notices'));
+        return view('admin.components.create-edit-notice');
     }
 
-    public function updateNotice()
+    public function updatedName($value)
     {
-        $this->validate();
-
-        try {
-
-            $notice = Notice::find($this->notice_id);
-
-            $notice->title = $this->title;
-            $notice->description = $this->description;
-
-            if($this->employee_id){
-                $notice->employee_id = $this->employee_id;
-            }else {
-                $notice->employee_id = null;
-            }
-
-            $notice->save();
-
-            $this->title = null;
-            $this->description = null;
-            $this->employee_id = null;
-
-            $this->is_edit_mode_on = false;
-
-            return $this->success('Saved', ' ');
-
-
-        }catch(\Exception $e){
-            return $this->error('Failer', $e->getMessage());
-        }
+        $this->slug = Str::slug($value);
     }
-
-    public function deleteHandeler($id)
-    {
-        return $this->ifConfirmThenDispatch('onNoticeDelete', $id, 'Are you sure ?', 'Notice will delete permanently !');
-    }
-
-    public function applyDelete($id)
-    {
-        try {
-
-            Notice::destroy($id);
-
-            return $this->success('Deleted', '');
-
-        } catch(\Exception $e){
-            return $this->success('Failer', $e->getMessage());
-        }
-        
-    }
-
-
-    public function cancelEditMode()
-    {
-        $this->title = null;
-        $this->description = null;
-        $this->employee_id = null;
-
-        $this->is_edit_mode_on = false;
-    }
-
-
-    public function enableEditMode($id)
-    {
-        $notice = Notice::find($id);
-
-        $this->title = $notice->title;
-        $this->description = $notice->description;
-        $this->employee_id = $notice->employee_id;
-
-        $this->notice_id = $notice->id;
-
-        $this->is_edit_mode_on = true;
-    }
-
 
     public function createNotice()
     {
         $this->validate();
 
-        try {
+        $notice = new Notice();
 
-            $notice = new Notice();
-
-            $notice->title = $this->title;
-            $notice->description = $this->description;
-
-            if($this->employee_id){
-                $notice->employee_id = $this->employee_id;
-            }
-
-            $notice->save();
-
-            $this->reset();
-
-            return $this->success('Created', '');
+        $notice->name = $this->name;
+        $notice->slug = $this->slug;
+        $notice->content = $this->content;
+        $notice->lang = $this->lang;
+        $notice->order = $this->order;
+        $notice->is_published = $this->is_published;
 
 
-        }catch(\Exception $e){
-            return $this->error('Failer', $e->getMessage());
-        }
+        if(!$notice->save()) return $this->error('Failed', 'Failed to create new Notice. Something went wrong.');
+
+        $this->reset();
+        $this->emit('onNoticeCreated');
+        $this->dispatchBrowserEvent('tinymce:clear');
+        $this->success('Created', '');
     }
 
-    private function getNotices()
+
+    public function updateNotice()
     {
-        return Notice::latest()->paginate(12);
+        $this->validate([
+            'name' => ['required', 'string'],
+            'slug' => ['required', 'string'],
+            'is_published' => ['required', 'boolean'],
+        ]);
+
+
+        $notice = Notice::find($this->notice_id);
+
+        $notice->name = $this->name;
+        $notice->slug = $this->slug;
+        $notice->content = $this->content;
+        $notice->is_published = $this->is_published;
+        $notice->order = $this->order;
+        $notice->is_published = $this->is_published;
+
+        if(!$notice->save()) return $this->error('Failed', 'Failed to updated Notice. Something went wrong.');
+
+        $this->reset();
+        $this->emit('onNoticeUpdated');
+        $this->dispatchBrowserEvent('tinymce:clear');
+        $this->success('Updated', '');
+
     }
-    
-    private function initData()
+
+    public function enableNoticeEditMode($id)
     {
-        $this->employees = Employee::with('user')->where('status', 'running')->latest()->get();
+        $notice = Notice::find($id);
+
+        $this->notice_id = $notice->id;
+        $this->name = $notice->name;
+        $this->slug = $notice->slug;
+        $this->content = $notice->content;
+        $this->order = $notice->order;
+        $this->lang = $notice->lang;
+        $this->is_published = $notice->is_published;
+
+        $this->dispatchBrowserEvent('tinymce:set:content', $this->content);
+
+        $this->is_edit_mode_on = true;
+    }
+
+    public function cancelEditMode()
+    {
+        $this->reset();
+        $this->dispatchBrowserEvent('tinymce:clear');
+        $this->is_edit_mode_on = false;
     }
 }

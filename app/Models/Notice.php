@@ -8,4 +8,12 @@ use Illuminate\Database\Eloquent\Model;
 class Notice extends Model
 {
     use HasFactory;
+
+
+    // Model Scope
+
+    public function scopePublished($query)
+    {
+        return $query->where('is_published', true);
+    }
 }
