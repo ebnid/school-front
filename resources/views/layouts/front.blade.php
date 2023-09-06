@@ -37,7 +37,7 @@
         </style>
 
     </head>
-    <body x-data="{ isNavigationOpen: false }" class="font-sans antialiased bg-white md:bg-gray-200 line-backgraound-image" style="background-image: url('{{ asset('assets/images/background-image.jpg') }}')">
+    <body x-data="{ isNavigationOpen: false }" class="font-sans antialiased bg-white md:bg-gray-200 line-backgraound-image" style="background-image: url('{{ asset('assets/images/background-body.jpg') }}')">
 
         @include('front.partials.header')
 
