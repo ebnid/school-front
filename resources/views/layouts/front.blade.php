@@ -37,7 +37,7 @@
         </style>
 
     </head>
-    <body x-data="{ isNavigationOpen: false }" class="font-sans antialiased bg-white md:bg-gray-200" style="background-image: url('asset('assets/images/background-body.jpg')'); width: 200px; height: 200px; background-repeat: repeat;">
+    <body x-data="{ isNavigationOpen: false }" class="font-sans antialiased bg-white md:bg-gray-200" >
 
         @include('front.partials.header')
 
