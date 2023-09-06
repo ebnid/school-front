@@ -41,7 +41,7 @@
 
         @include('front.partials.header')
 
-        <div class="max-w-4xl mx-auto">
+        <div class="max-w-5xl mx-auto">
             @include('front.partials.banner')
     
 
