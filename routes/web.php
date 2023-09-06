@@ -67,6 +67,7 @@ Route::get('/', function(){
 
 
 Route::view('/notices/list', 'front.pages.notice')->name('notice-list');
+Route::view('/information/list', 'front.pages.information-gallery')->name('information');
 Route::view('/gallery', 'front.pages.gallery')->name('gallery');
 Route::get('/{page_slug}', \App\Http\Controllers\CustomPageShowController::class)->name('page');
 Route::get('/notice/{notice_slug}/{id}', \App\Http\Controllers\NoticeDetailsController::class)->name('notice');
