@@ -9,7 +9,7 @@
 @if($home_caurosel)
 
     <div class="bg-white p-5 rounded-md">
-        <div class="swiper max-w-3xl mx-auto" id="home-caurosel">
+        <div class="swiper max-container mx-auto" id="home-caurosel">
             <div class="swiper-wrapper">
 
                 @foreach($images as $image)
