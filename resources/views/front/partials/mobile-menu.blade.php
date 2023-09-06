@@ -25,7 +25,7 @@
     
     @php 
 
-        $menus = \App\Models\Menu::published()->where('parent_id', null)->get();
+        $menus = \App\Models\Menu::published()->where('parent_id', null)->orderBy('order')->get();
 
     @endphp
 
@@ -34,7 +34,7 @@
 
         @php 
 
-            $children = \App\Models\Menu::published()->where('parent_id', $menu->id)->get();
+            $children = \App\Models\Menu::published()->where('parent_id', $menu->id)->orderBy('order')->get();
 
         @endphp 
 
@@ -74,7 +74,7 @@
                     
                         @php 
 
-                            $grandChildren = \App\Models\Menu::published()->where('parent_id', $child->id)->get();
+                            $grandChildren = \App\Models\Menu::published()->where('parent_id', $child->id)->orderBy('order')->get();
 
                         @endphp 
 
