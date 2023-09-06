@@ -5,3 +5,7 @@
 [x-cloak] {
     display: none;
 }
+
+.line-backgraound-image {
+    background-repeat: repeat;
+}
