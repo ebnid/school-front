@@ -5,17 +5,16 @@
     </section>
 
     <section class="mt-5">
-        <div class="container mx-auto">
-            <div class="grid grid-cols-1 md:grid-cols-5 gap-5">
-                <div class="col-span-3">
-                    <livewire:front.notice-list />
-                </div>
-                <div class="col-span-2">
-                    @include('front.partials.message-of-principal')
-                </div>
-            </div>
-        </div>
+        @include('front.partials.message-of-principal')
     </section>
-    @include('front.partials.pages-collection')
+
+    <section class="mt-5">
+        <livewire:front.notice-list />
+    </section>
+
+    <section class="mt-5">
+        @include('front.partials.pages-collection')
+    </section>
+
 </x-front-layout>
 
