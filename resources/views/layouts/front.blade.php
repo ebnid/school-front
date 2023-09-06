@@ -36,18 +36,22 @@
             [x-cloak] { display: none !important; }
         </style>
 
-
     </head>
     <body x-data="{ isNavigationOpen: false }" class="font-sans antialiased bg-white md:bg-gray-200">
 
         @include('front.partials.header')
-        @include('front.partials.banner')
-  
 
-        <main class="px-3 md:px-0">
-            {{ $slot }}
-        </main>
+        <div class="max-w-4xl mx-auto">
+            @include('front.partials.banner')
+    
 
+            <main class="px-3 md:px-0">
+                {{ $slot }}
+            </main>
+
+        </div>
+
+        
         @include('front.partials.mobile-menu')
         @include('front.partials.footer')
 
