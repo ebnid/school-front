@@ -28,6 +28,10 @@
                         <span class="hidden md:block bg-yellow-100 text-yellow-800 text-xs font-medium mr-2 px-2.5 py-0.5 rounded dark:bg-yellow-900 dark:text-yellow-300">Unpublished</span>
                     @endif
 
+                    @if($menu->link)
+                        <span class="bg-gray-100 text-gray-800 text-xs font-medium mr-2 px-2.5 py-0.5 rounded dark:bg-gray-700 dark:text-gray-300">{{ $menu->link ?? '' }}</span>
+                    @endif
+
                     @if($menu->order)
                         <span class="bg-purple-100 text-purple-800 text-xs font-medium mr-2 px-2.5 py-0.5 rounded dark:bg-purple-900 dark:text-purple-300">{{ $menu->order }}</span>
                     @endif
@@ -65,6 +69,11 @@
                         @else
                             <span class="hidden md:block bg-yellow-100 text-yellow-800 text-xs font-medium mr-2 px-2.5 py-0.5 rounded dark:bg-yellow-900 dark:text-yellow-300">Unpublished</span>
                         @endif
+
+                        @if($child->link)
+                            <span class="bg-gray-100 text-gray-800 text-xs font-medium mr-2 px-2.5 py-0.5 rounded dark:bg-gray-700 dark:text-gray-300">{{ $child->link ?? '' }}</span>
+                        @endif
+
 
                         @if($child->order)
                             <span class="bg-purple-100 text-purple-800 text-xs font-medium mr-2 px-2.5 py-0.5 rounded dark:bg-purple-900 dark:text-purple-300">{{ $child->order }}</span>
@@ -108,6 +117,10 @@
                                 <span class="hidden md:block bg-yellow-100 text-yellow-800 text-xs font-medium mr-2 px-2.5 py-0.5 rounded dark:bg-yellow-900 dark:text-yellow-300">Unpublished</span>
                             @endif
 
+                            @if($grandChild->link)
+                                <span class="bg-gray-100 text-gray-800 text-xs font-medium mr-2 px-2.5 py-0.5 rounded dark:bg-gray-700 dark:text-gray-300">{{ $grandChild->link ?? '' }}</span>
+                            @endif
+
                             @if($grandChild->order)
                                 <span class="bg-purple-100 text-purple-800 text-xs font-medium mr-2 px-2.5 py-0.5 rounded dark:bg-purple-900 dark:text-purple-300">{{ $grandChild->order }}</span>
                             @endif
@@ -149,6 +162,10 @@
                                     <span class="hidden md:block bg-blue-100 text-blue-800 text-xs font-medium mr-2 px-2.5 py-0.5 rounded dark:bg-blue-900 dark:text-blue-300">Published</span>
                                 @else
                                     <span class="hidden md:block bg-yellow-100 text-yellow-800 text-xs font-medium mr-2 px-2.5 py-0.5 rounded dark:bg-yellow-900 dark:text-yellow-300">Unpublished</span>
+                                @endif
+                                
+                                @if($grandGrandChild->link)
+                                    <span class="bg-gray-100 text-gray-800 text-xs font-medium mr-2 px-2.5 py-0.5 rounded dark:bg-gray-700 dark:text-gray-300">{{ $grandGrandChild->link ?? '' }}</span>
                                 @endif
 
                                 @if($grandGrandChild->order)
