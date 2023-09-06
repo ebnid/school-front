@@ -1,4 +1,4 @@
-<section class="bg-white mx-auto max-w-screen-xl rounded-md p-5 mt-5 font-bangla">
+<section class="bg-white mx-auto max-w-screen-xl rounded-md p-5 font-bangla">
     <h1 class="text-2xl font-bold text-center mb-5">নোটিশ বোর্ড </h1>
     <div class="">
         <!-- Start coding here -->
