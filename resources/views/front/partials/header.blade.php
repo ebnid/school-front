@@ -52,7 +52,7 @@
 
                                         @php 
 
-                                            $grandChildren = \App\Models\Menu::published()->where('parent_id', $child->id)->orderBy->('order')->get();
+                                            $grandChildren = \App\Models\Menu::published()->where('parent_id', $child->id)->orderBy('order')->get();
                                         
                                         @endphp 
 
