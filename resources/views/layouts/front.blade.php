@@ -36,6 +36,7 @@
             [x-cloak] { display: none !important; }
         </style>
 
+
     </head>
     <body x-data="{ isNavigationOpen: false }" class="font-sans antialiased bg-white md:bg-gray-200">
 
