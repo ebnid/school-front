@@ -4,7 +4,7 @@
             <div class="bg-white md:p-7 font-bangla">
                <div class="max-w-3xl mx-auto py-5 md:py-16">
                     <h1 class="text-4xl font-extrabold text-center">নোটিশ</h1>
-                    <h1 class="text-3xl mt-7 text-blue-600 font-extrabold text-center">{{ $notice->name ?? '' }}</h1>
+                    <h1 class="text-3xl mt-7 text-sky-900 font-extrabold text-center">{{ $notice->name ?? '' }}</h1>
                     <p class="mt-5">{{ $notice->created_at->format('d M Y h:i A') }}</p>
                     <p class="mt-4 text-lg">{!! $notice->content ?? '' !!}</p>
                </div>

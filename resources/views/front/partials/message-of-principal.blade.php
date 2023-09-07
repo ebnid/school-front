@@ -1,5 +1,5 @@
 <div class="rounded-md px-3 md:p-16 bg-white">
-    <h1 class="mb-5 md:mb-10 text-2xl md:text-3xl font-extrabold text-gray-900 text-center"><span class="text-transparent bg-clip-text bg-gradient-to-r to-emerald-600 from-sky-400">Message of Principal</span></h1>
+    <h1 class="mb-5 md:mb-10 text-2xl md:text-3xl font-extrabold text-sky-900 text-center"><span>Message of Principal</span></h1>
     <div class="flex flex-col items-center justify-center">
         <img class="block w-1/3 aspect-square rounded-full object-cover" src="{{ asset('assets/uchakhila-school-images/principal-muhammad-abdul-halim.jpg') }}" alt="" />
         <span class="text-xs font-bold text-gray-400 mt-3 tracking-wider">Mohammad Abdul Halim</span>
