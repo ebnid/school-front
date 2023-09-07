@@ -1,4 +1,4 @@
-<section class="md:mt-3 font-bangla">
+<section class="md:mt-3 font-bangla border">
     <div class="relative container mx-auto h-48" style="background-image: url('https://www.bssnews.net/assets/news_photos/2023/07/28/image-138809-1690531929.jpg')">
         <div class="absolute w-full h-full inset-0 bg-gradient-to-r bg-gradient-to-r from-sky-400 via-emerald-600 to-transparent">
             <div class="flex p-5 md:p-10">

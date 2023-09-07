@@ -8,7 +8,7 @@
 
 @if($home_gallery)
     <div>
-        <div class="grid grid-cols-2 md:grid-cols-3 gap-4">
+        <div class="grid grid-cols-2 md:grid-cols-3 gap-4 border">
             @foreach($images as $image)
                 <div>
                     <img class="h-auto max-w-full rounded-lg aspect-square object-cover cursor-pointer" src="{{ $image->imageUrl('square') }}" alt="">
