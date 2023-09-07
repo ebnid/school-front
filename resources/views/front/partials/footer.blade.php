@@ -9,7 +9,7 @@
               </div>
 
               <h1 class="text-2xl">উচাখিলা উচ্চ বিদ্যালয় ও কলেজে</h1>
-              
+
               <p>ইশ্বরগঞ্জ, ময়মনসিংহ।</p>
 
               <p class="mt-4 max-w-xs text-white">
@@ -162,7 +162,7 @@
 
                     @foreach($columns_attributes as $columns_attribute)
                       <li>
-                        <a href="{{ $columns_attribute->link }}" class="text-gray-900 transition hover:opacity-75">
+                        <a href="{{ $columns_attribute->link }}" class="text-gray-50 transition hover:opacity-75">
                           {{ $columns_attribute->name }}
                         </a>
                       </li>
