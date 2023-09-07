@@ -59,7 +59,7 @@
                     </thead>
                     <tbody>
                         @foreach($students ?? [] as $student)
-                            <tr class="border-b text-md dark:border-gray-700">
+                            <tr class="border-b text-lg dark:border-gray-700">
                                 <td class="px-4 py-3 ">
                                     @if($student->sex === 'MALE')
                                         @if($student->cyear === 'FIRST' || $student->cyear === 'SECOND')
