@@ -59,7 +59,7 @@
                     </thead>
                     <tbody>
                         @foreach($students ?? [] as $student)
-                            <tr class="border-b text-sm dark:border-gray-700">
+                            <tr class="border-b text-md dark:border-gray-700">
                                 <td class="px-4 py-3 ">
                                     @if($student->sex === 'MALE')
                                         @if($student->cyear === 'FIRST' || $student->cyear === 'SECOND')
@@ -86,7 +86,7 @@
                     </tbody>
                 </table>
             </div>
-            <nav class="py-2 mt14" aria-label="Table navigation">
+            <nav class="py-2 mt-5" aria-label="Table navigation">
                 {{ $students->links() }}
             </nav>
         </div>
