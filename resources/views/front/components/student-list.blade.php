@@ -1,5 +1,20 @@
+@php 
+
+    function englishToBanglaNumber($number) {
+        $englishNumbers = array('0', '1', '2', '3', '4', '5', '6', '7', '8', '9');
+        $banglaNumbers = array('০', '১', '২', '৩', '৪', '৫', '৬', '৭', '৮', '৯');
+
+        $banglaNumber = str_replace($englishNumbers, $banglaNumbers, $number);
+        
+        return $banglaNumber;
+    }
+
+
+@endphp
+
 <section class="bg-white mx-auto max-w-screen-xl rounded-md p-5 font-bangla py-5 md:py-16">
     <h1 class="text-2xl font-bold text-sky-900 text-center mb-5">ছাত্র/ছাত্রী তালিকা</h1>
+    <h1 class="text-xl font-bold text-sky-900 text-center mb-5">মোট - {{ englishToBanglaNumber($students->total()) }} জন </h1>
     <div class="">
 
         <!-- Filter option -->
