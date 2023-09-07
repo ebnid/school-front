@@ -32,13 +32,13 @@
 
                         @if(!count($children) > 0)
                             <li class="relative">
-                                <a href="{{ $menu->link }}" class="text-white hover:text-white hover:bg-purple-700 font-bold py-2 px-3 block flex items-center gap-2">
+                                <a href="{{ $menu->link }}" class="text-white hover:text-white hover:bg-sky-600 font-bold py-2 px-3 block flex items-center gap-2">
                                     <span>{{ $menu->name }}</span>
                                 </a>
                             </li>
                         @else 
                             <li class="relative group z-40">
-                                <a class="cursor-pointer text-white hover:text-white hover:bg-purple-700 font-bold py-2 px-3 block flex items-center gap-1">
+                                <a class="cursor-pointer text-white hover:text-white hover:bg-sky-600 font-bold py-2 px-3 block flex items-center gap-1">
                                     <span>{{ $menu->name }}</span>
                                     <span>
                                         <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-4 h-4">
@@ -58,16 +58,16 @@
 
                                         @if(!count($grandChildren))
                                             <li id="child-menu-item" class="relative">
-                                                <a href="{{ $child->link }}" class="text-white font-bold py-1 pl-4 block hover:text-white hover:bg-purple-700 flex items-center gap-2">
+                                                <a href="{{ $child->link }}" class="text-white font-bold py-1 pl-4 block hover:text-white hover:bg-sky-600 flex items-center gap-2">
                                                     <span>{{ $child->name }}</span>
                                                 </a>
                                             </li>
                                         @else 
                                             <li id="child-menu-item" class="relative">
-                                                <a class="cursor-pointer text-white font-bold py-1 pl-4 block hover:text-white hover:bg-purple-700 flex items-center gap-2">
+                                                <a class="cursor-pointer text-white font-bold py-1 pl-4 block hover:text-white hover:bg-sky-600 flex items-center gap-2">
                                                     <span>{{ $child->name }}</span>
                                                     <span>
-                                                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-4 h-4">
+                                                        <svg  xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-4 h-4">
                                                             <path stroke-linecap="round" stroke-linejoin="round" d="M8.25 4.5l7.5 7.5-7.5 7.5" />
                                                         </svg>
                                                     </span>
@@ -76,7 +76,7 @@
                                                 <ul class="grand-child-container absolute hidden top-0 left-full w-52 border rounded-md bg-white py-2 space-y-2">
                                                     @foreach($grandChildren as $grandChild)
                                                         <li>
-                                                            <a href="{{ $grandChild->link }}" class="text-white font-bold py-1 pl-4 block hover:text-white hover:bg-purple-700 flex items-center gap-2">
+                                                            <a href="{{ $grandChild->link }}" class="text-white font-bold py-1 pl-4 block hover:text-white hover:bg-sky-600 flex items-center gap-2">
                                                                 <span>{{ $grandChild->name }}</span>
                                                             </a>
                                                         </li>
