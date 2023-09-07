@@ -37,7 +37,7 @@
         </style>
 
     </head>
-    <body x-data="{ isNavigationOpen: false }" class="font-sans antialiased bg-white md:bg-gray-50" >
+    <body x-data="{ isNavigationOpen: false }" class="font-sans antialiased bg-white md:bg-gray-200" >
 
         @include('front.partials.header')
 
