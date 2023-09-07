@@ -21,6 +21,7 @@ class StudentList extends Component
     public function mount()
     {
         $this->generateYear();
+        $this->setDefaultValue();
     }
 
     public function render()
@@ -30,10 +31,33 @@ class StudentList extends Component
     }
 
 
+    private function setDefaultValue()
+    {
+        $this->year = now()->year;
+        $this->student_class = null;
+        $this->gender = null;
+    }
+
     private function getStudents()
     {
+        $year = $this->year;
+        $student_class = $this->student_class;
+        $gender = $this->gender;
+
+
         $query = Student::query();
 
+        $query->when($year, function($query) use($year){
+            $query->where('session', $year);
+        });
+
+        $query->when($student_class, function($query) use($student_class){
+            $query->where('cyear', $student_class);
+        });
+
+        $query->when($gender, function($query) use($gender){
+            $query->where('sex', $gender);
+        });
 
         return $query->paginate(30);
     }

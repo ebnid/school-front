@@ -15,8 +15,8 @@
             </div>
 
             <div>
-                <label for="ymonthear" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">শ্রেণি</label>
-                <select  id="month" class="bg-gray-50 border border-gray-300 text-gray-900 text-md rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500">
+                <label for="student_class" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">শ্রেণি</label>
+                <select wire:model.debounce="student_class"  id="student_class" class="bg-gray-50 border border-gray-300 text-gray-900 text-md rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500">
                     <option selected value="">সকল</option>
                     <option value="six">ষষ্ঠ</option>
                     <option value="seven">সপ্তম</option>
@@ -33,7 +33,7 @@
 
             <div>
                 <label for="student_gender" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">ছাত্র/ছাত্রী</label>
-                <select  id="student_gender" class="bg-gray-50 border border-gray-300 text-gray-900 text-md rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500">
+                <select wire:model.debounce="gender"  id="student_gender" class="bg-gray-50 border border-gray-300 text-gray-900 text-md rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500">
                     <option selected value="">উভয়</option>
                     <option value="male">ছাত্র</option>
                     <option value="female">ছাত্রী</option>
