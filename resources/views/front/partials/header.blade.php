@@ -32,13 +32,13 @@
 
                         @if(!count($children) > 0)
                             <li class="relative">
-                                <a href="{{ $menu->link }}" class="text-white hover:text-white hover:bg-sky-600 font-bold py-2 px-3 block flex items-center gap-2">
+                                <a href="{{ $menu->link }}" class="text-white hover:text-white hover:bg-sky-700 font-bold py-2 px-3 block flex items-center gap-2">
                                     <span>{{ $menu->name }}</span>
                                 </a>
                             </li>
                         @else 
                             <li class="relative group z-40">
-                                <a class="cursor-pointer text-white hover:text-white hover:bg-sky-600 font-bold py-2 px-3 block flex items-center gap-1">
+                                <a class="cursor-pointer text-white hover:text-white hover:bg-sky-700 font-bold py-2 px-3 block flex items-center gap-1">
                                     <span>{{ $menu->name }}</span>
                                     <span>
                                         <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-4 h-4">
@@ -47,7 +47,7 @@
                                     </span>
                                 </a>
 
-                                <ul class="group-hover:block absolute hidden top-full w-52 border rounded-md left-0 bg-white py-2 space-y-2">
+                                <ul class="group-hover:block absolute hidden top-full w-52 border border-sky-900 rounded-md left-0 bg-sky-800 py-2 space-y-2">
                                     @foreach($children as $child)
 
                                         @php 
@@ -58,25 +58,25 @@
 
                                         @if(!count($grandChildren))
                                             <li id="child-menu-item" class="relative">
-                                                <a href="{{ $child->link }}" class="text-white font-bold py-1 pl-4 block hover:text-white hover:bg-sky-600 flex items-center gap-2">
+                                                <a href="{{ $child->link }}" class="text-white font-bold py-1 pl-4 block hover:text-white hover:bg-sky-700 flex items-center gap-2">
                                                     <span>{{ $child->name }}</span>
                                                 </a>
                                             </li>
                                         @else 
                                             <li id="child-menu-item" class="relative">
-                                                <a class="cursor-pointer text-white font-bold py-1 pl-4 block hover:text-white hover:bg-sky-600 flex items-center gap-2">
+                                                <a class="cursor-pointer text-white font-bold py-1 pl-4 block hover:text-white hover:bg-sky-700 flex items-center gap-2">
                                                     <span>{{ $child->name }}</span>
                                                     <span>
-                                                        <svg  xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-4 h-4">
+                                                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-4 h-4">
                                                             <path stroke-linecap="round" stroke-linejoin="round" d="M8.25 4.5l7.5 7.5-7.5 7.5" />
                                                         </svg>
                                                     </span>
                                                 </a>
 
-                                                <ul class="grand-child-container absolute hidden top-0 left-full w-52 border rounded-md bg-white py-2 space-y-2">
+                                                <ul class="grand-child-container absolute hidden top-0 left-full w-52 border-sky-900 rounded-md bg-sky-800 py-2 space-y-2">
                                                     @foreach($grandChildren as $grandChild)
                                                         <li>
-                                                            <a href="{{ $grandChild->link }}" class="text-white font-bold py-1 pl-4 block hover:text-white hover:bg-sky-600 flex items-center gap-2">
+                                                            <a href="{{ $grandChild->link }}" class="text-white font-bold py-1 pl-4 block hover:text-white hover:bg-sky-700 flex items-center gap-2">
                                                                 <span>{{ $grandChild->name }}</span>
                                                             </a>
                                                         </li>
@@ -107,7 +107,7 @@
                 </button>
             </div>
             <!-- Login Links -->
-            <div>
+            <div class="ml-3">
                 <button id="dropdownMenuIconButton" data-dropdown-toggle="dropdownDots" class="inline-flex items-center p-2 text-sm font-medium text-center text-gray-900 bg-white rounded-lg hover:bg-gray-100 focus:ring-4 focus:outline-none dark:text-white focus:ring-gray-50 dark:bg-gray-800 dark:hover:bg-gray-700 dark:focus:ring-gray-600" type="button"> 
                     <svg class="w-5 h-5" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 4 15">
                         <path d="M3.5 1.5a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0Zm0 6.041a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0Zm0 5.959a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0Z"/>
