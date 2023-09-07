@@ -1,4 +1,4 @@
-<header class="bg-gradient-to-r to-emerald-600 from-sky-400 font-bangla px-3 md:px-0 sticky top-0 z-40 shadow">
+<header class="bg-black opacity-60 font-bangla px-3 md:px-0 sticky top-0 z-40 shadow">
     <div class="container mx-auto">
         <nav class="flex items-center h-14 justify-between">
 
