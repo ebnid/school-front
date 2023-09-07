@@ -8,7 +8,7 @@
 
 @if($home_caurosel)
 
-    <div class="bg-white md:p-5 rounded-md">
+    <div class="bg-white md:p-5">
         <div class="swiper max-container mx-auto" id="home-caurosel">
             <div class="swiper-wrapper">
 

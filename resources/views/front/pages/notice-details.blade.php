@@ -11,5 +11,7 @@
             </div>
         </div>
     </section>
-    @include('front.partials.pages-collection')
+    <section class="mt-5">
+        @include('front.partials.pages-collection')
+    </section>
 </x-front-layout>
