@@ -78,7 +78,7 @@
                 </table>
             </div>
             <nav class="py-2" aria-label="Table navigation">
-                {{ $student->links() }}
+                {{ $students->links() }}
             </nav>
         </div>
     </div>
