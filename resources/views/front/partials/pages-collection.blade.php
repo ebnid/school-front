@@ -2,7 +2,7 @@
     <div class="container mx-auto">
         <div class="grid grid-cols-1 md:grid-cols-3 gap-5">
             @php 
-                $pages = \App\Models\Page::published()->paginate(6);
+                $pages = \App\Models\Page::published()->take(8)->get();
             @endphp
 
             @foreach($pages as $page)
@@ -19,11 +19,5 @@
             @endforeach
 
         </div>
-
-        @if($pages->total() > 6)
-            <div class="mt-5">
-                {{ $pages->links() }}
-            </div>
-        @endif
     </div>
 </section>
