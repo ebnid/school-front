@@ -65,7 +65,7 @@ Route::get('/', function(){
 // Static Page
 
 
-
+Route::view('/students', 'front.pages.student-list')->name('student-list');
 Route::view('/notices/list', 'front.pages.notice')->name('notice-list');
 Route::view('/information/list', 'front.pages.information-gallery')->name('information');
 Route::view('/gallery', 'front.pages.gallery')->name('gallery');

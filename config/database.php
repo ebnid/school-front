@@ -63,6 +63,26 @@ return [
             ]) : [],
         ],
 
+        'student_mysql' => [
+            'driver' => 'mysql',
+            'url' => env('STUDENT_DATABASE_URL'),
+            'host' => env('STUDENT_DB_HOST', '127.0.0.1'),
+            'port' => env('STUDENT_DB_PORT', '3306'),
+            'database' => env('STUDENT_DB_DATABASE', 'forge'),
+            'username' => env('STUDENT_DB_USERNAME', 'forge'),
+            'password' => env('STUDENT_DB_PASSWORD', ''),
+            'unix_socket' => env('STUDENT_DB_SOCKET', ''),
+            'charset' => 'utf8mb4',
+            'collation' => 'utf8mb4_unicode_ci',
+            'prefix' => '',
+            'prefix_indexes' => true,
+            'strict' => true,
+            'engine' => null,
+            'options' => extension_loaded('pdo_mysql') ? array_filter([
+                PDO::MYSQL_ATTR_SSL_CA => env('STUDENT_MYSQL_ATTR_SSL_CA'),
+            ]) : [],
+        ],
+
         'pgsql' => [
             'driver' => 'pgsql',
             'url' => env('DATABASE_URL'),
