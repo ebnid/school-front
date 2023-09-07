@@ -1,4 +1,4 @@
-<aside x-cloak :class="isNavigationOpen ? 'visible translate-x-0' : 'invisible translate-x-full' " class="font-bangla font-bold transition-all fixed z-40 top-0 bottom-0 right-0  w-5/6 bg-sky-800 border-l border-sky-900 text-white aside-scroll-bar overflow-y-auto">
+<aside x-cloak :class="isNavigationOpen ? 'visible translate-x-0' : 'invisible translate-x-full' " class="font-bangla transition-all fixed z-40 top-0 bottom-0 right-0  w-5/6 bg-sky-800 border-l border-sky-900 text-white aside-scroll-bar overflow-y-auto">
     
     <div @click="isNavigationOpen = !isNavigationOpen" class="absolute right-4 top-2 w-7 h-7">
         <span class="mr-3">
