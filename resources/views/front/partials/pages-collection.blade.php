@@ -2,7 +2,7 @@
     <div class="container mx-auto">
         <div class="grid grid-cols-1 md:grid-cols-3 gap-5">
             @php 
-                $pages = \App\Models\Page::published()->take(8)->get();
+                $pages = \App\Models\Page::published()->take(9)->get();
             @endphp
 
             @foreach($pages as $page)

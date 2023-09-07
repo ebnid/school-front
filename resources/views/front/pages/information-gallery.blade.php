@@ -4,7 +4,7 @@
         <div class="container mx-auto">
             <div class="grid grid-cols-1 md:grid-cols-3 gap-5">
                 @php 
-                    $pages = \App\Models\Page::published()->latest()->paginate(12);
+                    $pages = \App\Models\Page::published()->latest()->paginate(6);
                 @endphp
 
                 @foreach($pages as $page)
@@ -22,7 +22,7 @@
 
             </div>
 
-            @if($pages->total() > 12)
+            @if($pages->total() > 6)
                 <div class="mt-5">
                     {{ $pages->links() }}
                 </div>
