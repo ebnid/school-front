@@ -35,7 +35,16 @@ class StudentList extends Component
     {
         $this->year = now()->year;
         $this->student_class = null;
-        $this->gender = null;
+        
+        if(request()->gender && !empty(request()->gender)){
+            if(request()->gender === 'female'){
+                $this->gender = 'female';
+            }
+
+            elseif(request()->gender === 'male'){
+                $this->gender = 'male';
+            }
+        }
     }
 
     private function getStudents()
