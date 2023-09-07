@@ -1,4 +1,4 @@
-<aside x-cloak :class="isNavigationOpen ? 'visible translate-x-0' : 'invisible translate-x-full' " class="font-bangla font-bold transition-all fixed z-40 top-0 bottom-0 right-0  w-5/6 bg-white border-l text-purple-600 aside-scroll-bar overflow-y-auto">
+<aside x-cloak :class="isNavigationOpen ? 'visible translate-x-0' : 'invisible translate-x-full' " class="font-bangla font-bold transition-all fixed z-40 top-0 bottom-0 right-0  w-5/6 bg-sky-800 border-l border-sky-900 text-white aside-scroll-bar overflow-y-auto">
     
     <div @click="isNavigationOpen = !isNavigationOpen" class="absolute right-4 top-2 w-7 h-7">
         <span class="mr-3">
@@ -20,8 +20,6 @@
             </span>
         </a>
     </div>
-
-
     
     @php 
 
@@ -40,7 +38,7 @@
 
         @if(!count($children) > 0)
             <div>
-                <a href="{{ $menu->link }}" class="cursor-pointer flex items-center py-2 px-3 hover:bg-purple-500 hover:text-white" >
+                <a href="{{ $menu->link }}" class="cursor-pointer flex items-center py-2 px-3 hover:bg-sky-900 hover:text-white" >
                     <span>
                         {{ $menu->name }}
                     </span>
@@ -48,7 +46,7 @@
             </div>
         @else 
             <div x-data="{isOpen: false}">
-                <a @click="isOpen = !isOpen" class="cursor-pointer flex items-center py-2 px-3 hover:bg-purple-500 hover:text-white" >
+                <a @click="isOpen = !isOpen" class="cursor-pointer flex items-center py-2 px-3 hover:bg-sky-900 hover:text-white" >
                     
                     <span>
                         {{ $menu->name }}
@@ -78,12 +76,12 @@
 
                         @endphp 
 
-                        <a href="{{ $child->link }}" class="border-l border-purple-600 cursor-pointer flex items-center text-sm py-1 px-3 hover:bg-purple-500 hover:text-white" >
+                        <a href="{{ $child->link }}" class="border-l cursor-pointer flex items-center text-sm py-1 px-3 hover:bg-sky-900 hover:text-white" >
                             {{ $child->name }}
                         </a>
 
                         @foreach($grandChildren as $grandChild)
-                            <a href="{{ $grandChild->link }}" class="ml-3 border-l border-purple-600 cursor-pointer flex items-center text-sm py-1 px-3 hover:bg-purple-500 hover:text-white" >
+                            <a href="{{ $grandChild->link }}" class="ml-3 border-l cursor-pointer flex items-center text-sm py-1 px-3 hover:bg-sky-900 hover:text-white" >
                                 {{ $grandChild->name }}
                             </a>
                         @endforeach

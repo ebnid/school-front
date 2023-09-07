@@ -1,16 +1,23 @@
-<footer class="bg-sky-900 mt-5 text-white">
+<footer class="bg-sky-900 mt-5 text-white font-bangla">
     <div class="mx-auto max-w-screen-xl space-y-8 px-4 py-16 sm:px-6 lg:space-y-16 lg:px-8">
 
         <div class="grid grid-cols-1 gap-8 lg:grid-cols-3">
           
-          <div>
-              <div class="text-teal-600">
+          <div class="flex flex-col items-center">
+              <div class="text-teal-600 flex justify-center">
                   <img src="https://attendance.uchakhilahss.edu.bd/assets/logo-uchakhila-high-school.png" alt="">
               </div>
 
-              <p class="mt-4 max-w-xs text-gray-500">
-                Lorem ipsum dolor, sit amet consectetur adipisicing elit. Esse non
-                cupiditate quae nam molestias.
+              <h1 class="text-2xl">উচাখিলা উচ্চ বিদ্যালয় ও কলেজে</h1>
+              
+              <p>ইশ্বরগঞ্জ, ময়মনসিংহ।</p>
+
+              <p class="mt-4 max-w-xs text-white">
+                info@uchakhilahss.edu.bd
+              </p>
+
+              <p class="mt-4 max-w-xs text-white">
+                Call: 01712-692739
               </p>
 
             <ul class="mt-8 flex gap-6">
@@ -20,7 +27,7 @@
                         href="/"
                         rel="noreferrer"
                         target="_blank"
-                        class="text-gray-700 transition hover:opacity-75"
+                        class="text-white transition hover:opacity-75"
                       >
                         <span class="sr-only">Facebook</span>
 
@@ -44,7 +51,7 @@
                         href="/"
                         rel="noreferrer"
                         target="_blank"
-                        class="text-gray-700 transition hover:opacity-75"
+                        class="text-white transition hover:opacity-75"
                       >
                         <span class="sr-only">Instagram</span>
 
@@ -68,7 +75,7 @@
                         href="/"
                         rel="noreferrer"
                         target="_blank"
-                        class="text-gray-700 transition hover:opacity-75"
+                        class="text-white transition hover:opacity-75"
                       >
                         <span class="sr-only">Twitter</span>
 
@@ -90,7 +97,7 @@
                         href="/"
                         rel="noreferrer"
                         target="_blank"
-                        class="text-gray-700 transition hover:opacity-75"
+                        class="text-white transition hover:opacity-75"
                       >
                         <span class="sr-only">GitHub</span>
 
@@ -114,7 +121,7 @@
                         href="/"
                         rel="noreferrer"
                         target="_blank"
-                        class="text-gray-700 transition hover:opacity-75"
+                        class="text-white transition hover:opacity-75"
                       >
                         <span class="sr-only">Dribbble</span>
 
@@ -144,7 +151,7 @@
 
               @foreach($footer_columns as $footer_column)
                 <div>
-                  <p class="font-medium text-gray-900">{{ $footer_column->column_title }}</p>
+                  <p class="font-medium text-white">{{ $footer_column->column_title }}</p>
 
                   <ul class="mt-6 space-y-4 text-sm">
                     @php 
@@ -155,7 +162,7 @@
 
                     @foreach($columns_attributes as $columns_attribute)
                       <li>
-                        <a href="{{ $columns_attribute->link }}" class="text-gray-700 transition hover:opacity-75">
+                        <a href="{{ $columns_attribute->link }}" class="text-gray-900 transition hover:opacity-75">
                           {{ $columns_attribute->name }}
                         </a>
                       </li>
@@ -167,7 +174,7 @@
 
       </div>
 
-      <p class="text-xs text-gray-500">
+      <p class="text-xs text-white">
         &copy; {{ date('Y') }}. {{ request()->getHttpHost() }}. All rights reserved.
       </p>
 
