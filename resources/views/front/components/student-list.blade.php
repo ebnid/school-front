@@ -43,10 +43,10 @@
         </div>
 
         <!-- Start coding here -->
-        <div class="bg-white dark:bg-gray-800 relative z-20 overflow-hidden">
+        <div class="mt-5 bg-white dark:bg-gray-800 relative z-20 overflow-hidden">
             <div class="overflow-x-auto z-20">
                 <table class="w-full whitespace-nowrap text-sm text-left text-gray-500 dark:text-gray-400">
-                    <thead class="text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-gray-400">
+                    <thead class="text-md text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-gray-400">
                         <tr>
                             <th scope="col" class="px-4 py-3">ছবি</th>
                             <th scope="col" class="px-4 py-3">নাম</th>
@@ -59,19 +59,19 @@
                     </thead>
                     <tbody>
                         @foreach($students ?? [] as $student)
-                            <tr class="border-b text-lg dark:border-gray-700">
+                            <tr class="border-b text-sm dark:border-gray-700">
                                 <td class="px-4 py-3 ">
                                     @if($student->sex === 'MALE')
                                         @if($student->cyear === 'FIRST' || $student->cyear === 'SECOND')
-                                            <img src="https://uchakhilahss.edu.bd/college_sas/automation/{{ $student->location }}" class="block w-20 h-20 rounded-full">
+                                            <img src="https://uchakhilahss.edu.bd/college_sas/automation/{{ $student->location }}" class="block w-14 h-14 rounded-full">
                                         @else 
-                                            <img src="https://uchakhilahss.edu.bd/school_sas/automation/{{ $student->location }}" class="block w-20 h-20 rounded-full">
+                                            <img src="https://uchakhilahss.edu.bd/school_sas/automation/{{ $student->location }}" class="block w-14 h-14 rounded-full">
                                         @endif
                                     @else 
                                         @if($student->cyear === 'FIRST' || $student->cyear === 'SECOND')
-                                            <img src="https://uchakhilahss.edu.bd/college_sas/automation/{{ $student->location }}" class="blur-sm block w-20 h-20 rounded-full">
+                                            <img src="https://uchakhilahss.edu.bd/college_sas/automation/{{ $student->location }}" class="blur-sm block w-14 h-14 rounded-full">
                                         @else 
-                                            <img src="https://uchakhilahss.edu.bd/school_sas/automation/{{ $student->location }}" class="blur-sm block w-20 h-20 rounded-full">
+                                            <img src="https://uchakhilahss.edu.bd/school_sas/automation/{{ $student->location }}" class="blur-sm block w-14 h-14 rounded-full">
                                         @endif
                                     @endif
                                 </td>
@@ -86,7 +86,7 @@
                     </tbody>
                 </table>
             </div>
-            <nav class="py-2" aria-label="Table navigation">
+            <nav class="py-2 mt14" aria-label="Table navigation">
                 {{ $students->links() }}
             </nav>
         </div>
