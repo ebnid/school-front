@@ -22,7 +22,7 @@
                     <option value="seven">সপ্তম</option>
                     <option value="eight">অষ্টম</option>
                     <option value="nine">নবম</option>
-                    <option value="nine(voc)">নবম</option>
+                    <option value="nine(voc)">নবম (ভোকেশনাল)</option>
                     <option value="ten">দশম</option>
                     <option value="ten(voc)">দশম (ভোকেশনাল)</option>
                     <option value="first">একাদ্বশ</option>

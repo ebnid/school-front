@@ -3,10 +3,13 @@
 namespace App\Http\Livewire\Front;
 
 use Livewire\Component;
+use Livewire\WithPagination;
 use App\Models\Student;
 
 class StudentList extends Component
 {
+
+    use WithPagination;
 
     public $years = [];
 
