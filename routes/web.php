@@ -55,6 +55,10 @@ Route::middleware([
     // Announcement
     Route::view('/announcement/create', 'admin.pages.announcement.create')->name('announcement.create');
 
+    // Teacher/Staff/Employee
+    Route::view('/teacher-staffs/create', 'admin.pages.teachers-staffs.create')->name('teacher-staffs.create');
+    Route::view('/teacher-staffs/list', 'admin.pages.teachers-staffs.list')->name('teacher-staffs.list');
+
 });
 
 
@@ -64,6 +68,9 @@ Route::get('/', function(){
 
 // Static Page
 
+Route::view('/teachers', 'front.pages.teachers')->name('teacher-list');
+Route::view('/staffs', 'front.pages.staffs')->name('staff-list');
+Route::view('/employee/details/{id}', 'front.pages.employee-deitails')->name('employee-details');
 
 Route::view('/students', 'front.pages.student-list')->name('student-list');
 Route::view('/notices/list', 'front.pages.notice')->name('notice-list');
