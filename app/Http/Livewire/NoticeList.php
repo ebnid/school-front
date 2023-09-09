@@ -63,7 +63,7 @@ class NoticeList extends Component
                   ->orWhere('name', $search);
         });
 
-        return $query->paginate(25);
+        return $query->latest()->orderBy('order')->paginate(25);
 
     }
 }
