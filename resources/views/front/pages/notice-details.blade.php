@@ -9,8 +9,12 @@
                     <p class="text-lg">{!! $notice->content ?? '' !!}</p>
                </div>
                <div class="space-y-5 mt-5">
-                    @foreach($notice->contentsUrl() as $pdfUrl)
-                        <embed src="{{ $pdfUrl }}" type="application/pdf" width="100%" height="600px">
+                    @foreach($notice->contentsUrl() as $file)
+                        @if($file['extension'] === 'pdf')
+                            <embed src="{{ $file['url'] }}" type="application/pdf" width="100%" height="600px">
+                        @else 
+                            <img class="block w-full h-auto" src="{{ $file['url'] }}">
+                        @endif
                     @endforeach
                 </div>
             </div>

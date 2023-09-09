@@ -32,7 +32,10 @@ class Notice extends Model implements HasMedia
 
         foreach($this->getMedia('contents') as $media)
         {
-            array_push($contents, $media->getUrl());
+            array_push($contents, [
+                'url' => $media->getUrl(),
+                'extension' => pathinfo($media->getUrl(), PATHINFO_EXTENSION)
+            ]);
         }
 
         return $contents;
