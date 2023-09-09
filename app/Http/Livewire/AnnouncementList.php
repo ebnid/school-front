@@ -70,7 +70,7 @@ class AnnouncementList extends Component
             $query->where('announce', 'like', '%' . $search . '%')->orWhere('announce', $search);
         });
 
-        return $query->paginate(25);
+        return $query->latest()->orderBy('order')->paginate(12);
 
     }
 }
