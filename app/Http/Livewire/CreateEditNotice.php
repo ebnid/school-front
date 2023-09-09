@@ -3,6 +3,7 @@
 namespace App\Http\Livewire;
 
 use Livewire\Component;
+use Livewire\WithFileUploads;
 use Illuminate\Support\Str;
 use App\Traits\WithSweetAlert;
 use App\Models\Notice;
@@ -10,6 +11,7 @@ use App\Models\Notice;
 class CreateEditNotice extends Component
 {
     use WithSweetAlert;
+    use WithFileUploads;
 
     public $is_edit_mode_on = false;
 
@@ -22,12 +24,17 @@ class CreateEditNotice extends Component
 
     public $notice_id;
 
+    // pdf contents
+    public $contents = [];
+    public $old_contents = [];
+
 
     protected $rules = [
         'name' => ['required', 'string'],
         'slug' => ['required', 'string'],
         'content' => ['nullable', 'string'],
         'order' => ['nullable', 'integer'],
+        // 'contents' => ['nullable', 'file', 'mimes:pdf'],
         'is_published' => ['required', 'boolean'],
     ];
 
@@ -45,6 +52,41 @@ class CreateEditNotice extends Component
         $this->slug = Str::slug($value);
     }
 
+
+    public function removeExistingContentOf($id)
+    {
+        $this->old_contents = $this->old_contents->reject(function($file) use($id){
+            if($file->id === $id){
+                $file->delete();
+                return true;
+            }
+
+            return false;
+        });
+    }
+
+
+    public function removeContentOf($id)
+    {
+        $this->contents = array_filter($this->contents, function($content, $index) use($id){
+            if($index === $id){
+                $content->delete();
+                return false;
+            }
+
+            return true;
+        }, ARRAY_FILTER_USE_BOTH);
+    }
+
+    public function removeAllContents()
+    {
+        foreach($this->contents as $content){
+            $content->delete();
+        }
+
+        $this->contents = [];
+    }
+
     public function createNotice()
     {
         $this->validate();
@@ -60,6 +102,15 @@ class CreateEditNotice extends Component
 
 
         if(!$notice->save()) return $this->error('Failed', 'Failed to create new Notice. Something went wrong.');
+
+        if(count($this->contents) > 0){
+
+            foreach($this->contents as $file)
+            {
+                $notice->addMedia($file)->toMediaCollection('contents');
+            }
+
+        }
 
         $this->reset();
         $this->emit('onNoticeCreated');
@@ -88,6 +139,16 @@ class CreateEditNotice extends Component
 
         if(!$notice->save()) return $this->error('Failed', 'Failed to updated Notice. Something went wrong.');
 
+        
+        if(count($this->contents) > 0){
+
+            foreach($this->contents as $file)
+            {
+                $notice->addMedia($file)->toMediaCollection('contents');
+            }
+
+        }
+
         $this->reset();
         $this->emit('onNoticeUpdated');
         $this->dispatchBrowserEvent('tinymce:clear');
@@ -106,6 +167,8 @@ class CreateEditNotice extends Component
         $this->order = $notice->order;
         $this->lang = $notice->lang;
         $this->is_published = $notice->is_published;
+
+        $this->old_contents = $notice->getMedia('contents');
 
         $this->dispatchBrowserEvent('tinymce:set:content', $this->content);
 

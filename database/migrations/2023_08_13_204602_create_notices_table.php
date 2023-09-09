@@ -15,7 +15,7 @@ return new class extends Migration
             $table->id();
             $table->string('name', 2048);
             $table->string('slug', 2300);
-            $table->text('content');
+            $table->text('content')->nullable();
             $table->integer('order')->nullable();
             $table->enum('lang', ['bangla', 'english'])->default('bangla');
             $table->boolean('is_published')->nullable()->default(true);
