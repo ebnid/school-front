@@ -34,6 +34,5 @@ class StaffList extends Component
         });
 
         return $query->where('employee_type', 'staff')->paginate(12);
-
     }
 }
