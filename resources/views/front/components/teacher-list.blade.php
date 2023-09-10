@@ -27,6 +27,7 @@
                         <div class="mt-2">
                             <h3 class="text-lg font-medium text-gray-700 dark:text-gray-200">{{ $teacher->name_en }}</h3>
                             <span class="mt-1 font-medium text-gray-600 dark:text-gray-300">{{ $teacher->designation }}</span>
+                            <a href="{{ route('employee-details', ['id' => $teacher->id ]) }}" class="block text-blue-400">Profile</a>
                         </div>
                     </div>
                 @endforeach
