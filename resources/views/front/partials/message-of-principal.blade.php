@@ -20,8 +20,8 @@
     </div>
 </div> -->
 
-<section class="text-gray-gray-600 body-font bg-white">
-  <div class="container px-5 pt-10 md:py-16 mx-auto flex flex-col">
+<section class="text-gray-gray-600 body-font">
+  <div class="bg-white container px-5 pt-10 md:py-16 mx-auto flex flex-col">
     <div class="lg:w-4/6 mx-auto">
       <div class="rounded-lg md:h-64 overflow-hidden">
         <img alt="content" class="object-contain h-full w-full rounded-md" src="{{ asset('assets/images/message-from-principal.jpg') }}">
@@ -36,7 +36,7 @@
             <div class="w-12 h-1 bg-white rounded mt-2 mb-4"></div>
             <p class="text-base">Principal</p>
             <h2 class="font-medium title-font mt-1 text-gray-700 text-sm">Uchakhila Higher Secondary School</h2>
-            <h2 class="font-medium  mt-1 text-white text-xs">Ishwargonj, Mymensingh.</h2>
+            <h2 class="font-medium  mt-1 text-gray-600 text-xs">Ishwargonj, Mymensingh.</h2>
 
           </div>
         </div>
