@@ -22,7 +22,7 @@
             <div class="grid gap-8 mt-8 grid-cols-1 lg:grid-cols-3">
                 @foreach($teachers as $teacher)
                     <div class="w-full max-w-xs text-center bg-white py-7 px-5">
-                        <img class="object-cover object-center w-full h-48 mx-auto rounded-lg" src="{{ $teacher->profileUrl() }}" alt="avatar" />
+                        <img class="object-cover object-center w-full mx-auto rounded-lg" src="{{ $teacher->profileUrl() }}" alt="avatar" />
 
                         <div class="mt-2">
                             <h3 class="text-lg font-medium text-gray-700 dark:text-gray-200">{{ $teacher->name_en }}</h3>
