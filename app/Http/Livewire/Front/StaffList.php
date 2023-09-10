@@ -18,7 +18,7 @@ class StaffList extends Component
     {
         $staffs = $this->getStaffs();
 
-        return view('front.components.teacher-list', compact('staffs'));
+        return view('front.components.staff-list', compact('staffs'));
     }
 
     private function getStaffs()
