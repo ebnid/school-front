@@ -3,7 +3,7 @@
 
     <div class="grid grid-cols-2 md:grid-cols-3 gap-5">
         @foreach($teachers as $teacher)
-            <div class="bg-white shadow-xl rounded-lg py-10">
+            <div class="bg-white shadow-xl rounded-lg pt-10">
                 <div class="flex justify-center">
                     <img class="block w-2/3 aspect-square object-cover border rounded-full mx-auto" src="{{ $teacher->profileUrl() }}" alt="{{ $teacher->name_en }}">
                 </div>
@@ -13,9 +13,8 @@
                         <p>{{ $teacher->designation }}</p>
                     </div>
                     <div class="text-center my-3">
-                        <a class="text-xs text-indigo-500 italic hover:underline hover:text-indigo-600 font-medium" href="#">View Profile</a>
+                        <a class="text-md font-bold text-indigo-500 italic hover:underline hover:text-indigo-600 font-medium" href="#">View Profile</a>
                     </div>
-
                 </div>
             </div>
         @endforeach
