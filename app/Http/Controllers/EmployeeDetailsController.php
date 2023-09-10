@@ -2,7 +2,8 @@
 
 namespace App\Http\Controllers;
 
-use Illuminate\Http\Employee;
+use Illuminate\Http\Request;
+use App\Models\Employee;
 
 class EmployeeDetailsController extends Controller
 {
