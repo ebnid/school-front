@@ -20,11 +20,11 @@
     </div>
 </div> -->
 
-<section class="text-gray-600 body-font bg-white">
+<section class="text-gray-100 body-font bg-sky-700">
   <div class="container px-5 py-16 mx-auto flex flex-col">
     <div class="lg:w-4/6 mx-auto">
       <div class="rounded-lg h-64 overflow-hidden">
-        <img alt="content" class="object-cover object-center h-full w-full" src="https://dummyimage.com/1200x500">
+        <img alt="content" class="object-contain h-full w-full" src="{{ asset('assets/images/message-from-principal.jpg') }}">
       </div>
       <div class="flex flex-col sm:flex-row mt-10">
         <div class="sm:w-1/3 text-center sm:pr-8 sm:py-8">
@@ -35,7 +35,7 @@
             </svg>
           </div>
           <div class="flex flex-col items-center text-center justify-center">
-            <h2 class="font-medium title-font mt-4 text-gray-900 text-lg">Phoebe Caulfield</h2>
+            <h2 class="font-medium title-font mt-4 text-white text-lg">Phoebe Caulfield</h2>
             <div class="w-12 h-1 bg-indigo-500 rounded mt-2 mb-4"></div>
             <p class="text-base">Raclette knausgaard hella meggs normcore williamsburg enamel pin sartorial venmo tbh hot chicken gentrify portland.</p>
           </div>

@@ -1,5 +1,5 @@
 <x-front-layout>
-    <section class="mt-5 py-10 md:py-16 px-10 bg-white">
+    <section class="container mx-auto mt-5 py-10 md:py-16 px-10 bg-white">
         <div class="flex flex-col items-center gap-3 justify-center mb-10">
             <img class="w-36 h-36 md:w-56 md:h-56 asepct-square block object-cover rounded-full" src="{{ $employee->profileUrl() }}" alt="{{ $employee->name_en }}">
             <h2 class="font-semibold text-sky-900">{{ $employee->bio ?? '' }}</h2>
