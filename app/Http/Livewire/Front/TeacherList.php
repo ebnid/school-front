@@ -11,6 +11,9 @@ class TeacherList extends Component
 
     use WithPagination;
 
+    public $search;
+
+
     public function render()
     {
         $teachers = $this->getTeachers();
@@ -20,6 +23,17 @@ class TeacherList extends Component
 
     private function getTeachers()
     {
-        return Employee::where('employee_type', 'teacher')->paginate(12);
+
+        $search = $this->search;
+
+        $query = Employee::query();
+
+        $query->when($this->search, function($query) use($search){
+            $query->where('name_en', 'like', '%' . $search . '%')->orWhere('name_en', $search);
+            $query->where('name_bn', 'like', '%' . $search . '%')->orWhere('name_bn', $search);
+        });
+
+        return $query->paginate(25);
+
     }
 }

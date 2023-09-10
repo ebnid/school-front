@@ -20,21 +20,16 @@
     <section class="dark:bg-gray-900">
         <div class="container px-6 mx-auto">
             <div class="grid gap-8 mt-8 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
-                @foreach($teachers as $teacher)
-                    <div class="w-full max-w-xs text-center">
-                        <img class="object-cover object-center w-full h-48 mx-auto rounded-lg" src="{{ $teacher->profileUrl() }}" alt="avatar" />
+                <div class="w-full max-w-xs text-center">
+                    <img class="object-cover object-center w-full h-48 mx-auto rounded-lg" src="https://web.uchakhilahss.edu.bd/assets/uchakhila-school-images/principal-muhammad-abdul-halim.jpg" alt="avatar" />
 
-                        <div class="mt-2">
-                            <h3 class="text-lg font-medium text-gray-700 dark:text-gray-200">{{ $teacher->name_en }}</h3>
-                            <span class="mt-1 font-medium text-gray-600 dark:text-gray-300">{{ $teacher->designation }}</span>
-                        </div>
+                    <div class="mt-2">
+                        <h3 class="text-lg font-medium text-gray-700 dark:text-gray-200">Ahmed Omer</h3>
+                        <span class="mt-1 font-medium text-gray-600 dark:text-gray-300">CEO</span>
                     </div>
-                @endforeach
+                </div>
             </div>
         </div>
     </section>
-
-    <div class="mt-10">
-        {{ $teachers->links() }}
-    </div>
+    
 </div>

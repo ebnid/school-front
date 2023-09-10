@@ -13,6 +13,13 @@ class Employee extends Model implements HasMedia
     use HasFactory;
     use InteractsWithMedia;
 
+
+    protected $casts = [
+        'date_of_birth' => 'datetime',
+        'join_date' => 'datetime',
+        'current_organization_join_date' => 'datetime',
+    ];
+
     public function registerMediaCollections(): void
     {
         $this->addMediaCollection('profile')
@@ -44,6 +51,23 @@ class Employee extends Model implements HasMedia
     public function scopePublished($query)
     {
         return $query->where('is_published', true);
+    }
+
+    // Compute Property
+    public function getSafeNid()
+    {
+
+        // Get the first 4 digits of the input
+        $firstFourDigits = substr($this->nid_no, 0, 4);
+
+        // Calculate the number of asterisks needed to replace the rest of the input
+        $asterisks = str_repeat('*', strlen($this->nid_no) - 4);
+
+        // Concatenate the first 4 digits with asterisks
+        $hidden = $firstFourDigits . $asterisks;
+
+        return $hidden;
+  
     }
 
 }

@@ -1,40 +1,83 @@
 <x-front-layout>
-    <section class="mt-5 py-16 px-10 bg-white">
-        <div>
-
+    <section class="mt-5 py-10 md:py-16 px-10 bg-white">
+        <div class="flex flex-col items-center gap-3 justify-center mb-10">
+            <img class="w-36 h-36 md:w-56 md:h-56 asepct-square block object-cover rounded-full" src="{{ $employee->profileUrl() }}" alt="{{ $employee->name_en }}">
+            <h2 class="font-semibold text-sky-900">{{ $employee->bio ?? '' }}</h2>
         </div>
         <div>
         <div class="flow-root">
             <dl class="-my-3 divide-y divide-gray-100 text-sm">
                 <div class="grid grid-cols-1 gap-1 py-3 sm:grid-cols-3 sm:gap-4">
-                <dt class="font-medium text-gray-900">Title</dt>
-                <dd class="text-gray-700 sm:col-span-2">Mr</dd>
+                    <dt class="font-bold text-gray-900">Name En</dt>
+                    <dd class="text-gray-700 sm:col-span-2">{{ $employee->name_en ?? '' }}</dd>
                 </div>
 
-                <div class="grid grid-cols-1 gap-1 py-3 sm:grid-cols-3 sm:gap-4">
-                <dt class="font-medium text-gray-900">Name</dt>
-                <dd class="text-gray-700 sm:col-span-2">John Frusciante</dd>
+                <div class=" grid grid-cols-1 gap-1 py-3 sm:grid-cols-3 sm:gap-4">
+                    <dt class="font-bold text-gray-900">Name Bn</dt>
+                    <dd class="font-bangal text-gray-700 sm:col-span-2">{{ $employee->name_bn ?? '' }}</dd>
                 </div>
 
-                <div class="grid grid-cols-1 gap-1 py-3 sm:grid-cols-3 sm:gap-4">
-                <dt class="font-medium text-gray-900">Occuputation</dt>
-                <dd class="text-gray-700 sm:col-span-2">Guitarist</dd>
+                <div class=" grid grid-cols-1 gap-1 py-3 sm:grid-cols-3 sm:gap-4">
+                    <dt class="font-bold text-gray-900">Designation</dt>
+                    <dd class="font-bangal text-gray-700 sm:col-span-2">{{ $employee->designation ?? '' }}</dd>
                 </div>
 
-                <div class="grid grid-cols-1 gap-1 py-3 sm:grid-cols-3 sm:gap-4">
-                <dt class="font-medium text-gray-900">Salary</dt>
-                <dd class="text-gray-700 sm:col-span-2">$1,000,000+</dd>
+                <div class=" grid grid-cols-1 gap-1 py-3 sm:grid-cols-3 sm:gap-4">
+                    <dt class="font-bold text-gray-900">Subject</dt>
+                    <dd class="font-bangal text-gray-700 sm:col-span-2">{{ $employee->subject ?? '' }}</dd>
                 </div>
 
-                <div class="grid grid-cols-1 gap-1 py-3 sm:grid-cols-3 sm:gap-4">
-                <dt class="font-medium text-gray-900">Bio</dt>
-                <dd class="text-gray-700 sm:col-span-2">
-                    Lorem ipsum dolor, sit amet consectetur adipisicing elit. Et facilis
-                    debitis explicabo doloremque impedit nesciunt dolorem facere, dolor
-                    quasi veritatis quia fugit aperiam aspernatur neque molestiae labore
-                    aliquam soluta architecto?
-                </dd>
+                <div class=" grid grid-cols-1 gap-1 py-3 sm:grid-cols-3 sm:gap-4">
+                    <dt class="font-bold text-gray-900">Subject Code</dt>
+                    <dd class="font-bangal text-gray-700 sm:col-span-2">{{ $employee->subject_code ?? '' }}</dd>
                 </div>
+
+                <div class=" grid grid-cols-1 gap-1 py-3 sm:grid-cols-3 sm:gap-4">
+                    <dt class="font-bold text-gray-900">Mobile No</dt>
+                    <dd class="font-bangal text-gray-700 sm:col-span-2">{{ $employee->mobile_no ?? '' }}</dd>
+                </div>
+
+                <div class=" grid grid-cols-1 gap-1 py-3 sm:grid-cols-3 sm:gap-4">
+                    <dt class="font-bold text-gray-900">Email</dt>
+                    <dd class="font-bangal text-gray-700 sm:col-span-2">{{ $employee->email ?? '' }}</dd>
+                </div>
+
+                <div class=" grid grid-cols-1 gap-1 py-3 sm:grid-cols-3 sm:gap-4">
+                    <dt class="font-bold text-gray-900">NID</dt>
+                    <dd class="font-bangal text-gray-700 sm:col-span-2">{{ $employee->getSafeNid() ?? '' }}</dd>
+                </div>
+
+
+                <div class=" grid grid-cols-1 gap-1 py-3 sm:grid-cols-3 sm:gap-4">
+                    <dt class="font-bold text-gray-900">Date of Birth</dt>
+                    <dd class="font-bangal text-gray-700 sm:col-span-2">{{ $employee->date_of_birth ? $employee->date_of_birth->format('d M Y') : '' }}</dd>
+                </div>
+
+                <div class=" grid grid-cols-1 gap-1 py-3 sm:grid-cols-3 sm:gap-4">
+                    <dt class="font-bold text-gray-900">Join Date</dt>
+                    <dd class="font-bangal text-gray-700 sm:col-span-2">{{ $employee->join_date ? $employee->join_date->format('d M Y') : '' }}</dd>
+                </div>
+
+                <div class=" grid grid-cols-1 gap-1 py-3 sm:grid-cols-3 sm:gap-4">
+                    <dt class="font-bold text-gray-900">This Organization Join Date</dt>
+                    <dd class="font-bangal text-gray-700 sm:col-span-2">{{ $employee->current_organization_join_date ?  $employee->current_organization_join_date->format('d M Y') : '' }}</dd>
+                </div>
+
+                <div class=" grid grid-cols-1 gap-1 py-3 sm:grid-cols-3 sm:gap-4">
+                    <dt class="font-bold text-gray-900">Training</dt>
+                    <dd class="font-bangal text-gray-700 sm:col-span-2">{{ $employee->training ?? '' }}</dd>
+                </div>
+
+                <div class=" grid grid-cols-1 gap-1 py-3 sm:grid-cols-3 sm:gap-4">
+                    <dt class="font-bold text-gray-900">Term</dt>
+                    <dd class="font-bangal text-gray-700 sm:col-span-2">{{ $employee->term ?? '' }}</dd>
+                </div>
+
+                <div class=" grid grid-cols-1 gap-1 py-3 sm:grid-cols-3 sm:gap-4">
+                    <dt class="font-bold text-gray-900">Education</dt>
+                    <dd class="font-bangal text-gray-700 sm:col-span-2"></dd>
+                </div>
+
             </dl>
             </div> 
         </div>
