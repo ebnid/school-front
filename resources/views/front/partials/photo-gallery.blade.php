@@ -12,7 +12,7 @@
 
   <div class="container px-5 py-24 mx-auto">
 
-    <div class="grid grid-cols-2 gap-2">
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-2">
       
         @foreach($images as $image)
             <div>
