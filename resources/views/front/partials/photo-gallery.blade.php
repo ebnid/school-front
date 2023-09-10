@@ -7,18 +7,34 @@
 @endphp
 
 @if($home_gallery)
-    <div>
-        <div class="grid grid-cols-2 md:grid-cols-3 gap-4">
-            @foreach($images as $image)
-                <div>
-                    <img class="h-auto max-w-full rounded-lg aspect-square object-cover cursor-pointer" src="{{ $image->imageUrl('square') }}" alt="">
-                </div>
-            @endforeach
-        </div>
-        <div class="mt-5">
-            {{ $images->links() }}
-        </div>
+
+<section class="text-gray-600 body-font">
+
+  <div class="container px-5 py-24 mx-auto">
+
+    <div class="flex flex-col text-center w-full mb-20">
+      <h1 class="sm:text-3xl text-2xl font-medium title-font mb-4 text-gray-900">Master Cleanse Reliac Heirloom</h1>
+      <p class="lg:w-2/3 mx-auto leading-relaxed text-base">Whatever cardigan tote bag tumblr hexagon brooklyn asymmetrical gentrify, subway tile poke farm-to-table. Franzen you probably haven't heard of them man bun deep jianbing selfies heirloom.</p>
     </div>
+
+    <div class="flex flex-wrap -m-4">
+      
+        @foreach($images as $image)
+            <div class="lg:w-1/3 sm:w-1/2 p-4">
+                <div class="flex relative">
+                    <img alt="gallery" class="absolute inset-0 w-full h-full object-cover object-center" src="{{ $image->imageUrl() }}">
+                </div>
+            </div>
+        @endforeach
+
+    </div>
+
+    <div class="mt-5">
+        {{ $images->links() }}
+    </div>
+
+  </div>
+</section>
 
     @push('styles')
         <link rel="stylesheet" href="{{ asset('assets/viewerjs/viewer.css') }}">
