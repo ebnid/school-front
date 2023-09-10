@@ -6,6 +6,7 @@ use Livewire\Component;
 use Livewire\WithPagination;
 use App\Models\Student;
 
+
 class StudentList extends Component
 {
 

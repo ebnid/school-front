@@ -1,5 +1,5 @@
 <div class="p-5 md:p-10 bg-gray-100 rounded-md">
-    <h1 class="font-bangla font-bold mb-10 text-3xl text-center text-sky-900">মোট শিক্ষক  ও  শিক্ষিকা তালিকা</h1>
+    <h1 class="font-bangla font-bold mb-10 text-3xl text-center text-sky-900">মোট স্টাফ তালিকা</h1>
 
     <div class="mb-5 flex flex-col md:flex-row items-center justify-between space-y-3 md:space-y-0 md:space-x-4 p-4">
         <div class="w-full md:w-1/2 mx-auto">
@@ -19,17 +19,24 @@
 
     <section class="dark:bg-gray-900">
         <div class="container px-6 mx-auto">
-            <div class="grid gap-8 mt-8 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
-                <div class="w-full max-w-xs text-center">
-                    <img class="object-cover object-center w-full h-48 mx-auto rounded-lg" src="https://web.uchakhilahss.edu.bd/assets/uchakhila-school-images/principal-muhammad-abdul-halim.jpg" alt="avatar" />
+            <div class="grid gap-8 mt-8 grid-cols-1 lg:grid-cols-4">
+                @foreach($staffs as $staff)
+                    <div class="w-full max-w-xs text-center bg-white pt-5 pb-4 px-5">
+                        <img class="aspect-square object-cover object-center w-full mx-auto rounded-lg" src="{{ $staff->profileUrl() }}" alt="avatar" />
 
-                    <div class="mt-2">
-                        <h3 class="text-lg font-medium text-gray-700 dark:text-gray-200">Ahmed Omer</h3>
-                        <span class="mt-1 font-medium text-gray-600 dark:text-gray-300">CEO</span>
+                        <div class="mt-2">
+                            <h3 class="text-lg font-medium text-gray-700 dark:text-gray-200">{{ $staff->name_en }}</h3>
+                            <span class="mt-1 font-medium text-gray-600 dark:text-gray-300">{{ $staff->designation }}</span>
+                            <a href="{{ route('employee-details', ['id' => $staff->id ]) }}" class="hover:underline mt-2 block text-blue-400">Profile</a>
+                        </div>
                     </div>
-                </div>
+                @endforeach
             </div>
         </div>
     </section>
+
+    <div class="mt-10">
+        {{ $staffs->links() }}
+    </div>
     
 </div>

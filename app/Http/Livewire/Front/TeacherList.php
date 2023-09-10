@@ -33,7 +33,7 @@ class TeacherList extends Component
             $query->where('name_bn', 'like', '%' . $search . '%')->orWhere('name_bn', $search);
         });
 
-        return $query->paginate(25);
+        return $query->where('employee_type', 'teacher')->paginate(12);
 
     }
 }
