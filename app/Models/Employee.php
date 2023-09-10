@@ -57,11 +57,17 @@ class Employee extends Model implements HasMedia
     public function getSafeNid()
     {
 
+        $nid = $this->nid_no;
+        $nid_length = strlen($nid);
+
+        if($nid_length <= 4) return $nid;
+
+
         // Get the first 4 digits of the input
-        $firstFourDigits = substr($this->nid_no, 0, 4);
+        $firstFourDigits = substr($nid, 0, 4);
 
         // Calculate the number of asterisks needed to replace the rest of the input
-        $asterisks = str_repeat('*', strlen($this->nid_no) - 4);
+        $asterisks = str_repeat('*', strlen($nid) - 4);
 
         // Concatenate the first 4 digits with asterisks
         $hidden = $firstFourDigits . $asterisks;
