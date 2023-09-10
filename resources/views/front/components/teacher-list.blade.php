@@ -18,8 +18,8 @@
     </div>
 
     <section class="dark:bg-gray-900">
-        <div class="container px-6 mx-auto">
-            <div class="grid gap-8 mt-8 grid-cols-1 lg:grid-cols-4">
+        <div class="container md:px-6 mx-auto">
+            <div class="grid gap-5 md:gap-8 mt-8 grid-cols-1 lg:grid-cols-4">
                 @foreach($teachers as $teacher)
                     <div class="w-full max-w-xs text-center bg-white pt-5 pb-4 px-5">
                         <img class="aspect-square object-cover object-center w-full mx-auto rounded-lg" src="{{ $teacher->profileUrl() }}" alt="avatar" />
