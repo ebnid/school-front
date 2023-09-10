@@ -41,15 +41,15 @@
 
         @include('front.partials.header')
 
-        <div class="max-w-5xl mx-auto">
-            @include('front.partials.banner')
-    
 
-            <main class="px-3 md:px-0">
-                {{ $slot }}
-            </main>
+        @include('front.partials.banner')
 
-        </div>
+
+        <main class="px-3 md:px-0">
+            {{ $slot }}
+        </main>
+
+
 
         
         @include('front.partials.mobile-menu')
