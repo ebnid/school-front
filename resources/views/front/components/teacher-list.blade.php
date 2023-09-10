@@ -13,7 +13,7 @@
                         <p>{{ $teacher->designation }}</p>
                     </div>
                     <div class="text-center my-3">
-                        <a class="text-md font-bold text-indigo-500 italic hover:underline hover:text-indigo-600 font-medium" href="#">View Profile</a>
+                        <a href="{{ route('employee-details', ['id' => $teacher->id]) }}" class="text-md font-bold text-indigo-500 italic hover:underline hover:text-indigo-600 font-medium" href="#">Details</a>
                     </div>
                 </div>
             </div>

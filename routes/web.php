@@ -70,7 +70,7 @@ Route::get('/', function(){
 
 Route::view('/teachers', 'front.pages.teachers')->name('teacher-list');
 Route::view('/staffs', 'front.pages.staffs')->name('staff-list');
-Route::view('/employee/details/{id}', 'front.pages.employee-deitails')->name('employee-details');
+Route::get('/employee/details/{id}', \App\Http\Controllers\EmployeeDetailsController::class)->name('employee-details');
 
 Route::view('/students', 'front.pages.student-list')->name('student-list');
 Route::view('/notices/list', 'front.pages.notice')->name('notice-list');
