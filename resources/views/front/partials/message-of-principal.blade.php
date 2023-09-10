@@ -23,7 +23,7 @@
 <section class="text-gray-100 body-font bg-sky-700">
   <div class="container px-5 md:py-16 mx-auto flex flex-col">
     <div class="lg:w-4/6 mx-auto">
-      <div class="rounded-lg h-64 overflow-hidden">
+      <div class="rounded-lg md:h-64 overflow-hidden">
         <img alt="content" class="object-contain h-full w-full rounded-md" src="{{ asset('assets/images/message-from-principal.jpg') }}">
       </div>
       <div class="flex flex-col sm:flex-row mt-10">
