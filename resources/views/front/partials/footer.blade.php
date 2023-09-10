@@ -4,10 +4,7 @@
         <div class="grid grid-cols-1 gap-8 lg:grid-cols-3">
           
           <div class="flex flex-col items-center">
-              <div class="text-teal-600 flex justify-center">
-                  <img src="https://attendance.uchakhilahss.edu.bd/assets/logo-uchakhila-high-school.png" alt="">
-              </div>
-
+            
               <h1 class="text-2xl">উচাখিলা উচ্চ বিদ্যালয় ও কলেজে</h1>
 
               <p>ইশ্বরগঞ্জ, ময়মনসিংহ।</p>
