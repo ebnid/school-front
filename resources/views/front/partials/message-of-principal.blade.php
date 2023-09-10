@@ -33,7 +33,7 @@
           </div>
           <div class="flex flex-col items-center text-center justify-center">
             <h2 class="font-medium title-font mt-4 text-gray-700 text-lg">Mohammad Abdul Halim</h2>
-            <div class="w-12 h-1 bg-white rounded mt-2 mb-4"></div>
+            <div class="w-12 h-1 bg-black rounded mt-2 mb-4"></div>
             <p class="text-base">Principal</p>
             <h2 class="font-medium title-font mt-1 text-gray-700 text-sm">Uchakhila Higher Secondary School</h2>
             <h2 class="font-medium  mt-1 text-gray-600 text-xs">Ishwargonj, Mymensingh.</h2>
