@@ -20,7 +20,7 @@
     </div>
 </div> -->
 
-<section class="text-gray-100 body-font bg-sky-700">
+<section class="text-gray-gray-600 body-font bg-white">
   <div class="container px-5 pt-10 md:py-16 mx-auto flex flex-col">
     <div class="lg:w-4/6 mx-auto">
       <div class="rounded-lg md:h-64 overflow-hidden">
@@ -32,10 +32,10 @@
             <img src="{{ asset('assets/uchakhila-school-images/principal-muhammad-abdul-halim.jpg') }}" alt="">
           </div>
           <div class="flex flex-col items-center text-center justify-center">
-            <h2 class="font-medium title-font mt-4 text-white text-lg">Mohammad Abdul Halim</h2>
+            <h2 class="font-medium title-font mt-4 text-gray-700 text-lg">Mohammad Abdul Halim</h2>
             <div class="w-12 h-1 bg-white rounded mt-2 mb-4"></div>
             <p class="text-base">Principal</p>
-            <h2 class="font-medium title-font mt-1 text-white text-sm">Uchakhila Higher Secondary School</h2>
+            <h2 class="font-medium title-font mt-1 text-gray-700 text-sm">Uchakhila Higher Secondary School</h2>
             <h2 class="font-medium  mt-1 text-white text-xs">Ishwargonj, Mymensingh.</h2>
 
           </div>
