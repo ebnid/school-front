@@ -21,7 +21,7 @@
         <div class="container px-6 mx-auto">
             <div class="grid gap-8 mt-8 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
                 @foreach($teachers as $teacher)
-                    <div class="w-full max-w-xs text-center">
+                    <div class="w-full max-w-xs text-center bg-white py-7 px-5">
                         <img class="object-cover object-center w-full h-48 mx-auto rounded-lg" src="{{ $teacher->profileUrl() }}" alt="avatar" />
 
                         <div class="mt-2">
