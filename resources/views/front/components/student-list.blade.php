@@ -12,7 +12,7 @@
 
 @endphp
 
-<section class="bg-white mx-auto max-w-screen-xl rounded-md p-5 font-bangla py-5 md:py-16">
+<section class="bg-white container mx-auto  rounded-md p-5 font-bangla py-5 md:py-16">
     <h1 class="text-2xl font-bold text-sky-900 text-center mb-5">ছাত্র/ছাত্রী তালিকা</h1>
     <h1 class="text-xl font-bold text-sky-900 text-center mb-5">মোট - {{ englishToBanglaNumber($students->total()) }} জন </h1>
     <div class="">
