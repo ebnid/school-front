@@ -12,13 +12,11 @@
 
   <div class="container px-5 py-24 mx-auto">
 
-    <div class="flex flex-wrap -m-4">
+    <div class="grid grid-cols-2 gap-2">
       
         @foreach($images as $image)
-            <div class="lg:w-1/3 sm:w-1/2 p-4">
-                <div class="flex">
-                    <img alt="gallery" class="w-full h-full object-cover object-center" src="{{ $image->imageUrl() }}">
-                </div>
+            <div>
+                <img class="h-auto max-w-full rounded-lg" src="{{ $image->imageUrl() }}" alt="">
             </div>
         @endforeach
 
