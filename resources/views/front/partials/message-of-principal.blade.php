@@ -24,29 +24,28 @@
   <div class="container px-5 py-16 mx-auto flex flex-col">
     <div class="lg:w-4/6 mx-auto">
       <div class="rounded-lg h-64 overflow-hidden">
-        <img alt="content" class="object-contain h-full w-full" src="{{ asset('assets/images/message-from-principal.jpg') }}">
+        <img alt="content" class="object-contain h-full w-full rounded-md" src="{{ asset('assets/images/message-from-principal.jpg') }}">
       </div>
       <div class="flex flex-col sm:flex-row mt-10">
         <div class="sm:w-1/3 text-center sm:pr-8 sm:py-8">
-          <div class="w-20 h-20 rounded-full inline-flex items-center justify-center bg-gray-200 text-gray-400">
-            <svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="w-10 h-10" viewBox="0 0 24 24">
-              <path d="M20 21v-2a4 4 0 00-4-4H8a4 4 0 00-4 4v2"></path>
-              <circle cx="12" cy="7" r="4"></circle>
-            </svg>
+          <div class="w-36 h-36 rounded-full inline-flex items-center justify-center bg-gray-200 text-gray-400">
+            <img src="{{ asset('assets/uchakhila-school-images/principal-muhammad-abdul-halim.jpg') }}" alt="">
           </div>
           <div class="flex flex-col items-center text-center justify-center">
-            <h2 class="font-medium title-font mt-4 text-white text-lg">Phoebe Caulfield</h2>
-            <div class="w-12 h-1 bg-indigo-500 rounded mt-2 mb-4"></div>
-            <p class="text-base">Raclette knausgaard hella meggs normcore williamsburg enamel pin sartorial venmo tbh hot chicken gentrify portland.</p>
+            <h2 class="font-medium title-font mt-4 text-white text-lg">Mohammad Abdul Halim</h2>
+            <div class="w-12 h-1 bg-white rounded mt-2 mb-4"></div>
+            <p class="text-base">Principal</p>
+            <h2 class="font-medium title-font mt-1 text-white text-sm">Uchakhila Higher Secondary School</h2>
+            <h2 class="font-medium  mt-1 text-white text-xs">Ishwargonj, Mymensingh.</h2>
+
           </div>
         </div>
         <div class="sm:w-2/3 sm:pl-8 sm:py-8 sm:border-l border-gray-200 sm:border-t-0 border-t mt-4 pt-4 sm:mt-0 text-center sm:text-left">
-          <p class="leading-relaxed text-lg mb-4">Meggings portland fingerstache lyft, post-ironic fixie man bun banh mi umami everyday carry hexagon locavore direct trade art party. Locavore small batch listicle gastropub farm-to-table lumbersexual salvia messenger bag. Coloring book flannel truffaut craft beer drinking vinegar sartorial, disrupt fashion axe normcore meh butcher. Portland 90's scenester vexillologist forage post-ironic asymmetrical, chartreuse disrupt butcher paleo intelligentsia pabst before they sold out four loko. 3 wolf moon brooklyn.</p>
-          <a class="text-indigo-500 inline-flex items-center">Learn More
-            <svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="w-4 h-4 ml-2" viewBox="0 0 24 24">
-              <path d="M5 12h14M12 5l7 7-7 7"></path>
-            </svg>
-          </a>
+          <p class="leading-relaxed text-lg mb-4"></p>
+            <p class="leading-relaxed text-lg mb-4">According to the demand of nation country and to speared modern knowledge of Science & Technology. Since 1932 the traditional ancient institute named Uchakhila Higher Secondary School has been established eliminate education to those who are deprived of modern facilities living at the Ishwarganj upazila under the district of Mymensingh. That is why combined the sections of School, College & Vocational have been initiated in this area since establishment.</p>
+            <p class="leading-relaxed text-lg mb-4">We are remembering those who help with their merit, industry, economy etc from their respective places. At present the standard stage of education of this institutions is enhancing day by day and ensuring the standard education management as well as nurturing merit in spite of unlimited obstacles here is no any lack of sincerity and morality to build up merit.</p>
+            <p class="leading-relaxed text-lg mb-4">The main purpose of this institute to explore creativity and hidden talent the student with co-curricular activities has been created. Under the strong administrative and in exchange of endless industry of teachers, systematical education management has been ensured here. As a result, the students board exam at every stages have been toped with GPA 5 more than expectation and 15/16 scholarships this upazila.</p>
+            <p class="leading-relaxed text-lg mb-4">The students have been achieving great success in all types of co-curricular activities & sports. Confidently I believed that this institutions will go forward coming days with fame and spreading a lot of reputation, after all this institutions will be succeed in all sectors.</p>
         </div>
       </div>
     </div>
