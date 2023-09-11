@@ -3,6 +3,18 @@
         <dl class="-my-3 divide-y divide-gray-100 text-sm">
 
             <div class="text-lg grid grid-cols-1 gap-1 py-3 sm:grid-cols-3 sm:gap-4">
+                <dt class="font-base  text-gray-900">Showing Language</dt>
+                <dd class="text-gray-700 sm:col-span-2">
+                    <div>
+                        <x-ui.select wire:model.debounce="name_lang" class="block h-10 text-md mt-1 w-full">
+                            <option value="bangla">Bangla</option>
+                            <option value="english">English</option>
+                        </x-ui.select>
+                    </div>
+                </dd>
+            </div>
+
+            <div class="text-lg grid grid-cols-1 gap-1 py-3 sm:grid-cols-3 sm:gap-4">
                 <dt class="font-base  text-gray-900">School/College Name Bengali</dt>
                 <dd class="text-gray-700 sm:col-span-2">
                     <div>

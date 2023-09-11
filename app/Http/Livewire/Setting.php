@@ -20,6 +20,7 @@ class Setting extends Component
     public $principal_message_excerpt_2;
     public $email;
     public $mobile;
+    public $name_lang;
     public $banner;
     public $logo;
 
@@ -62,6 +63,7 @@ class Setting extends Component
         $this->principal_message_excerpt_2 = _Setting::where('name', 'principal_message_excerpt_2')->first()->value;
         $this->email = _Setting::where('name', 'email')->first()->value;
         $this->mobile = _Setting::where('name', 'mobile')->first()->value;
+        $this->name_lang = _Setting::where('name', 'name_lang')->first()->value;
 
 
         // Model Instance
@@ -82,6 +84,7 @@ class Setting extends Component
         _Setting::where('name', 'principal_message_excerpt_2')->update(['value' => $this->principal_message_excerpt_2]);
         _Setting::where('name', 'email')->update(['value' => $this->email]);
         _Setting::where('name', 'mobile')->update(['value' => $this->mobile]);
+        _Setting::where('name', 'name_lang')->update(['value' => $this->name_lang]);
     }
 
 }

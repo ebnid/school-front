@@ -5,6 +5,7 @@ namespace Database\Seeders;
 use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
 use App\Models\Setting;
+use App\Models\SettingBoolean;
 
 class SettingSeeder extends Seeder
 {
@@ -25,5 +26,6 @@ class SettingSeeder extends Seeder
         Setting::create(['name' => 'mobile', 'value' => null]);
         Setting::create(['name' => 'banner', 'value' => null]);
         Setting::create(['name' => 'logo', 'value' => null]);
+        Setting::create(['name' => 'name_lang', 'value' => null]);
     }
 }
