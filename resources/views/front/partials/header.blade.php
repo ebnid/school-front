@@ -2,10 +2,17 @@
     <div class="container mx-auto">
         <nav class="flex items-center h-16 justify-between">
 
+            @php 
+
+                $addmission_button_text = \App\Models\Setting::where('admission_button_text')->first();
+                $addmission_button_link = \App\Models\Setting::where('admission_button_text')->first();
+
+            @endphp
+
             <!-- Logo -->
             <h1>
-                <a href="/" class="text-white flex flex-col border rounded-full px-4 py-2">
-                    <span class="text-sm md:text-xl">অনলাইন এডমিশন ২০২৩ -ক্লিক</span>
+                <a href="{{ $addmission_button_text->link }}" class="text-white flex flex-col border rounded-full px-4 py-2">
+                    <span class="text-sm md:text-xl">{{ $addmission_button_text->value }}</span>
                 </a>
             </h1>
 
