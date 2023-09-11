@@ -73,9 +73,33 @@
                     <dd class="font-bangal text-gray-700 sm:col-span-2">{{ $employee->term ?? '' }}</dd>
                 </div>
 
-                <div class=" grid grid-cols-1 gap-1 py-3 sm:grid-cols-3 sm:gap-4">
+                <div class="grid grid-cols-1 gap-1 py-3 sm:grid-cols-3 sm:gap-4">
                     <dt class="font-bold text-gray-900">Education</dt>
-                    <dd class="font-bangal text-gray-700 sm:col-span-2"></dd>
+                    <dd class="font-bangal text-gray-700 sm:col-span-2">
+                        <div class="overflow-x-auto z-20">
+                            <table class="w-full whitespace-nowrap text-sm text-left text-gray-500 dark:text-gray-400">
+                                <thead class="text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-gray-400">
+                                    <tr>
+                                        <th scope="col" class="px-4 py-3">Exam Name</th>
+                                        <th scope="col" class="px-4 py-3">Passing Year</th>
+                                        <th scope="col" class="px-4 py-3">Division/Gpa</th>
+                                        <th scope="col" class="px-4 py-3">Board</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    @foreach($employee->educations ?? [] as $education)
+                                    <tr class="border-b dark:border-gray-700">
+                                        <td class="px-4 py-3">{{ $education->exam_name ?? '' }}</td>
+                                        <td class="px-4 py-3">{{ $education->passing_year ?? '' }}</td>
+                                        <td class="px-4 py-3">{{ $education->division_gpa ?? '' }}</td>
+                                        <td class="px-4 py-3">{{ $education->board ?? '' }}</td>
+                                    </tr>
+                                    @endforeach
+                                </tbody>
+                            </table>
+                        </div>
+
+                    </dd>
                 </div>
 
             </dl>

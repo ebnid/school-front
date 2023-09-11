@@ -33,7 +33,12 @@ class EmployeeList extends Component
 
     public function enableEmployeeEditMode($id)
     {
-        $this->emit('onEmployeeEdit', $id);
+        return $this->emit('onEmployeeEdit', $id);
+    }
+
+    public function openEducationList($id)
+    {
+        return $this->emit('onOpenEducationList', $id);
     }
 
 

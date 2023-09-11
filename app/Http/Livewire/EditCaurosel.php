@@ -55,7 +55,7 @@ class EditCaurosel extends Component
     public function enableCauroselEditMode($id)
     {
 
-        $this->caurosel = caurosel::find($id);
+        $this->caurosel = Caurosel::find($id);
 
         $this->is_edit_mode_on = true;
 

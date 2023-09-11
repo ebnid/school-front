@@ -11,8 +11,7 @@ class EmployeeDetailsController extends Controller
     {
         try {
 
-            $employee = Employee::published()->find($request->id);
-
+            $employee = Employee::with('educations')->published()->find($request->id);
             if(!$employee) abort(404);
 
             return view('front.pages.employee-details', compact('employee'));

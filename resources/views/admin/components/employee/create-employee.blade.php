@@ -74,13 +74,10 @@
             <textarea wire:model.debounce="permanent_address" id="permanent_address" rows="4" class="block p-2.5 w-full text-sm text-gray-900 rounded-lg border border-gray-300 focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"></textarea>
         </div>
 
+
         <div>
             <x-label for="designation" value="{{ __('Designation') }}" />
-            <x-ui.select wire:model.debounce="designation" id="show_in_page" class="block h-10 text-md mt-1 w-full">
-                <option value="">Select</option>
-                <option value="Head Master">Head Master</option>
-                <option value="Assistant Teacher">Assistant Teacher</option>
-            </x-ui.select>
+            <x-input wire:model.debounce="designation" id="designation" class="block h-8 mt-1 w-full" type="text" />
         </div>
 
         <div>

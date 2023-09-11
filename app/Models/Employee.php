@@ -7,6 +7,7 @@ use Illuminate\Database\Eloquent\Model;
 use Spatie\MediaLibrary\HasMedia;
 use Spatie\MediaLibrary\MediaCollections\Models\Media;
 use Spatie\MediaLibrary\InteractsWithMedia;
+use App\Models\Education;
 
 class Employee extends Model implements HasMedia
 {
@@ -46,6 +47,12 @@ class Employee extends Model implements HasMedia
         return '';
     }
 
+
+    // Relationship
+    public function educations()
+    {
+        return $this->hasMany(Education::class);
+    }
 
     // Model Scope
     public function scopePublished($query)
