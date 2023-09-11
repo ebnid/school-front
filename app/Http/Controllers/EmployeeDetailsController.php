@@ -17,7 +17,7 @@ class EmployeeDetailsController extends Controller
             return view('front.pages.employee-details', compact('employee'));
 
         }catch(\Exception $e){
-            dd($e->getMessage());
+            abort(404);
         }
     }
 }
