@@ -59,6 +59,9 @@ Route::middleware([
     Route::view('/teacher-staffs/create', 'admin.pages.teachers-staffs.create')->name('teacher-staffs.create');
     Route::view('/teacher-staffs/list', 'admin.pages.teachers-staffs.list')->name('teacher-staffs.list');
 
+    // Setting
+    Route::view('/setting', 'admin.pages.setting.create')->name('setting');
+
 });
 
 

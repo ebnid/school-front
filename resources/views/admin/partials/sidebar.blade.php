@@ -239,7 +239,7 @@
 
 
         <div x-transition.duration.150ms x-show="isOpen" class="pl-7">
-            <a href="" class="border-l cursor-pointer flex items-center text-sm py-1 px-3 hover:bg-gray-700" >
+            <a href="{{ route('setting') }}" class="border-l cursor-pointer flex items-center text-sm py-1 px-3 hover:bg-gray-700" >
                 General
             </a>
             <a href="{{ route('admins.list') }}" class="border-l cursor-pointer flex items-center text-sm py-1 px-3 hover:bg-gray-700" >
