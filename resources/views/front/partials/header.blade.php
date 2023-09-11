@@ -11,7 +11,7 @@
 
             <!-- Logo -->
             <h1>
-                <a href="{{ $addmission_button_text->link }}" class="text-white flex flex-col border rounded-full px-4 py-2">
+                <a href="{{ $addmission_button_text_link->value }}" class="text-white flex flex-col border rounded-full px-4 py-2">
                     <span class="text-sm md:text-xl">{{ $addmission_button_text->value }}</span>
                 </a>
             </h1>
