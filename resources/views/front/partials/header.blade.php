@@ -4,8 +4,8 @@
 
             @php 
 
-                $addmission_button_text = \App\Models\Setting::where('admission_button_text')->first();
-                $addmission_button_link = \App\Models\Setting::where('admission_button_text')->first();
+                $addmission_button_text = \App\Models\Setting::where('name', 'admission_button_text')->first();
+                $addmission_button_link = \App\Models\Setting::where('name', 'admission_button_text')->first();
 
             @endphp
 
