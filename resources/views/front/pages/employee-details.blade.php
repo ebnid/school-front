@@ -28,6 +28,11 @@
                 </div>
 
                 <div class=" grid grid-cols-1 gap-1 py-3 sm:grid-cols-3 sm:gap-4">
+                    <dt class="font-bold text-gray-900">MPO Index</dt>
+                    <dd class="font-bangal text-gray-700 sm:col-span-2">{{ $employee->mpo_index ?? '' }}</dd>
+                </div>
+
+                <div class=" grid grid-cols-1 gap-1 py-3 sm:grid-cols-3 sm:gap-4">
                     <dt class="font-bold text-gray-900">Subject Code</dt>
                     <dd class="font-bangal text-gray-700 sm:col-span-2">{{ $employee->subject_code ?? '' }}</dd>
                 </div>

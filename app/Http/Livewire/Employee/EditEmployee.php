@@ -40,6 +40,7 @@ class EditEmployee extends Component
         'employee.training' => ['nullable', 'string', 'max:255'],
         'employee.designation' => ['nullable', 'string', 'max:255'],
         'employee.term' => ['nullable', 'string', 'max:255'],
+        'employee.mpo_index' => ['nullable', 'string', 'max:255'],
         'employee.bio' => ['nullable', 'string', 'max:5000'],
         'employee.employee_type' => ['nullable', 'string', 'max:255'],
         'employee.is_published' => ['nullable', 'boolean'],

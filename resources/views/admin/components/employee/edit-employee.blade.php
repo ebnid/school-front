@@ -109,6 +109,10 @@
                             <x-input wire:model.debounce="current_organization_join_date" id="current_organization_join_date" class="block h-8 mt-1 w-full" type="date" />
                         </div>
 
+                        <div>
+                            <x-label for="mpo_index" value="{{ __('MPO Index') }}" />
+                            <x-input wire:model.debounce="employee.mpo_index" id="mpo_index" class="block h-8 mt-1 w-full" type="text" />
+                        </div>
 
                         <div>
                             <x-label for="subject" value="{{ __('Subject') }}" />

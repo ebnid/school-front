@@ -29,6 +29,7 @@ class CreateEmployee extends Component
     public $training;
     public $term;
     public $bio;
+    public $mpo_index;
     public $employee_type;
     public $is_published;
     public $image;
@@ -52,6 +53,7 @@ class CreateEmployee extends Component
         'training' => ['nullable', 'string', 'max:255'],
         'designation' => ['nullable', 'string', 'max:255'],
         'term' => ['nullable', 'string', 'max:255'],
+        'mpo_index' => ['nullable', 'string', 'max:255'],
         'bio' => ['nullable', 'string', 'max:5000'],
         'employee_type' => ['nullable', 'string', 'max:255'],
         'is_published' => ['nullable', 'boolean'],
@@ -89,6 +91,7 @@ class CreateEmployee extends Component
             $employee->training = $this->training;
             $employee->term = $this->term;
             $employee->bio = $this->bio;
+            $employee->mpo_index = $this->mpo_index;
             $employee->employee_type = $this->employee_type;
             $employee->is_published = $this->is_published;
 

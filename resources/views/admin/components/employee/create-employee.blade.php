@@ -98,6 +98,11 @@
 
 
         <div>
+            <x-label for="mpo_index" value="{{ __('MPO Index') }}" />
+            <x-input wire:model.debounce="mpo_index" id="mpo_index" class="block h-8 mt-1 w-full" type="text" />
+        </div>
+
+        <div>
             <x-label for="subject" value="{{ __('Subject') }}" />
             <x-input wire:model.debounce="subject" id="subject" class="block h-8 mt-1 w-full" type="text" />
         </div>
