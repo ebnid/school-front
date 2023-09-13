@@ -148,7 +148,7 @@ class Setting extends Component
 
         $this->banner = null;
 
-        $this->old_banner = $logo->bannerUrl();
+        $this->old_banner = $banner->bannerUrl();
     }
 
     private function updatePrincipalPhoto()
