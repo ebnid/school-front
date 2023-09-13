@@ -5,12 +5,12 @@
     $school_name = null;
     $school_address = null;
 
-    if($name === 'bangla'){
+    if($name_lang === 'bangla'){
         $school_name = \App\Models\Setting::where('name', 'name_bn')->first()->value;
         $school_address = \App\Models\Setting::where('name', 'address_bn')->first()->value;
     }
     
-    if($name === 'english'){
+    if($name_lang === 'english'){
         $school_name = \App\Models\Setting::where('name', 'name_en')->first()->value;
         $school_address = \App\Models\Setting::where('name', 'address_en')->first()->value;
     }
