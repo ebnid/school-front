@@ -23,6 +23,8 @@ class Setting extends Component
     public $email;
     public $mobile;
     public $name_lang;
+    public $principal_name;
+    public $principal_message_page_link;
     public $banner;
     public $logo;
     public $principal_photo;
@@ -88,8 +90,10 @@ class Setting extends Component
         $this->email = _Setting::where('name', 'email')->first()->value;
         $this->mobile = _Setting::where('name', 'mobile')->first()->value;
         $this->name_lang = _Setting::where('name', 'name_lang')->first()->value;
+        $this->principal_name = _Setting::where('name', 'principal_name')->first()->value;
+        $this->principal_message_page_link = _Setting::where('name', 'principal_message_page_link')->first()->value;
 
-
+        
         // Model Instance
         $this->old_banner = _Setting::where('name', 'banner')->first()->bannerUrl();
         $this->old_logo = _Setting::where('name', 'logo')->first()->logoUrl();
@@ -110,6 +114,8 @@ class Setting extends Component
         _Setting::where('name', 'email')->update(['value' => $this->email]);
         _Setting::where('name', 'mobile')->update(['value' => $this->mobile]);
         _Setting::where('name', 'name_lang')->update(['value' => $this->name_lang]);
+        _Setting::where('name', 'principal_name')->update(['value' => $this->principal_name]);
+        _Setting::where('name', 'principal_message_page_link')->update(['value' => $this->principal_message_page_link]);
 
         $this->updateLogo();
         $this->updateBanner();

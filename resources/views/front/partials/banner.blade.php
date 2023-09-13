@@ -1,6 +1,7 @@
 @php 
 
     $name_lang = \App\Models\Setting::where('name', 'name_lang')->first()->value;
+    $banner_url = \App\Models\Setting::where('name', 'banner')->first()->bannerUrl();
 
     $school_name = null;
     $school_address = null;
@@ -19,7 +20,7 @@
 
 
 <section class="md:mt-3 {{ $name_lang === 'bangla' ? 'font-bangla' : '' }}">
-    <div class="relative container mx-auto h-48" style="background-image: url('https://www.bssnews.net/assets/news_photos/2023/07/28/image-138809-1690531929.jpg')">
+    <div class="relative container mx-auto h-48" style="background-image: url('{{ $banner_url }}')">
         <div class="absolute w-full h-full inset-0 bg-gradient-to-r bg-gradient-to-r from-sky-400 via-emerald-600 to-transparent">
             <div class="flex p-5 md:p-10">
                 <div class="">

@@ -69,6 +69,25 @@
             </div>
 
             <div class="text-lg grid grid-cols-1 gap-1 py-3 sm:grid-cols-3 sm:gap-4">
+                <dt class="font-base  text-gray-900">Principal Name</dt>
+                <dd class="text-gray-700 sm:col-span-2">
+                    <div>
+                        <x-input wire:model.debounce="principal_name" class="block mt-1 w-full" type="text" />
+                    </div>
+                </dd>
+            </div>
+
+
+            <div class="text-lg grid grid-cols-1 gap-1 py-3 sm:grid-cols-3 sm:gap-4">
+                <dt class="font-base  text-gray-900">Principal Message Page Link</dt>
+                <dd class="text-gray-700 sm:col-span-2">
+                    <div>
+                        <x-input wire:model.debounce="principal_message_page_link" class="block mt-1 w-full" type="text" />
+                    </div>
+                </dd>
+            </div>
+
+            <div class="text-lg grid grid-cols-1 gap-1 py-3 sm:grid-cols-3 sm:gap-4">
                 <dt class="font-base  text-gray-900">Principal Message Exceprt 1</dt>
                 <dd class="text-gray-700 sm:col-span-2">
                     <div class="col-span-2">
@@ -103,6 +122,7 @@
                     </div>
                 </dd>
             </div>
+
 
             <div class="text-lg grid grid-cols-1 gap-1 py-3 sm:grid-cols-3 sm:gap-4">
                 <dt class="font-base  text-gray-900">Logo</dt>
@@ -220,12 +240,11 @@
                 </dd>
             </div>
 
-
-
-
         </dl>
     </div>
     <div class="mt-10 flex justify-end">
         <x-button wire:click.debounce="saveChanges">Save</x-button>
     </div>
+
+    <x-ui.loading-spinner wire:loading.flex wire:target="saveChanges, logo, banner, principal_photo, removeTempLogo, removeTempBanner, removeTempPrincipalPhoto" />
 </div>
