@@ -57,7 +57,7 @@
                         class="text-white transition hover:opacity-75"
                       >
                         <span class="sr-only">{{ $social->name }}</span>
-                        <img src="{{ $social->iconUrl() }}" class="w-10 h-10" alt="">
+                        <img src="{{ $social->iconUrl() }}" class="w-8 h-8 rounded-full" alt="{{ $social->name }}">
                       </a>
                   </li>
                 @endforeach
