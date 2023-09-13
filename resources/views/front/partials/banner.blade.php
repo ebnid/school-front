@@ -24,7 +24,7 @@
             <div class="flex p-5 md:p-10">
                 <div class="">
                     <!-- <h1 class="mb-4 text-2xl font-extrabold text-gray-900 dark:text-white md:text-5xl lg:text-6xl"><span class="text-transparent bg-clip-text bg-gradient-to-r to-emerald-600 from-sky-400">উচাখিলা উচ্চ বিদ্যালয় ও কলেজে</span></h1> -->
-                    <h1 class="mb-4  {{ $name_lang === 'bangla' ? 'text-2xl' : 'text-xl'}} font-extrabold text-gray-900 dark:text-white md:text-5xl lg:text-6xl"><span class="text-white">{{ $school_name }}</span></h1>
+                    <h1 class="mb-4  {{ $name_lang === 'bangla' ? 'text-2xl md:text-5xl lg:text-6xl' : 'text-xl md:text-3xl lg:text-4xl'}} font-extrabold text-gray-900 dark:text-white"><span class="text-white">{{ $school_name }}</span></h1>
                     <!-- <h1 class="mb-3 text-lg font-extrabold text-gray-900 dark:text-white"><span class="text-transparent bg-clip-text bg-gradient-to-r to-emerald-600 from-sky-400">ইশ্বরগঞ্জ, ময়মনসিংহ।</span></h1> -->
                     <h1 class="mb-3 text-lg font-extrabold"><span class="text-white">{{ $school_address }}</span></h1>
                     <div class="max-w-2xl">
