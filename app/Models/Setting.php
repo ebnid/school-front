@@ -22,6 +22,7 @@ class Setting extends Model implements HasMedia
     {
         $this->addMediaCollection('banner')->singleFile();
         $this->addMediaCollection('logo')->singleFile();
+        $this->addMediaCollection('principal')->singleFile();
     }
 
 
@@ -37,9 +38,19 @@ class Setting extends Model implements HasMedia
 
     public function logoUrl()
     {
-        if($this->hasMedia('banner'))
+        if($this->hasMedia('logo'))
         {
-            return $this->getFirstMedia('banner')->getUrl();
+            return $this->getFirstMedia('logo')->getUrl();
+        }
+        
+        return '';
+    }
+
+    public function principalPhotoUrl()
+    {
+        if($this->hasMedia('principal'))
+        {
+            return $this->getFirstMedia('principal')->getUrl();
         }
         
         return '';

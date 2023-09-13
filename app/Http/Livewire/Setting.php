@@ -3,12 +3,14 @@
 namespace App\Http\Livewire;
 
 use Livewire\Component;
+use Livewire\WithFileUploads;
 use App\Models\Setting as _Setting;
 use App\Traits\WithSweetAlert;
 
 class Setting extends Component
 {
     use WithSweetAlert;
+    use WithFileUploads;
 
     public $name_en;
     public $name_bn;
@@ -23,9 +25,12 @@ class Setting extends Component
     public $name_lang;
     public $banner;
     public $logo;
+    public $principal_photo;
 
     public $old_banner;
     public $old_logo;
+    public $old_principal_photo;
+
 
     public function mount()
     {
@@ -51,6 +56,25 @@ class Setting extends Component
 
     }
 
+
+    public function removeTempBanner()
+    {
+        $this->banner->delete();
+        $this->banner = null;
+    }
+
+    public function removeTempLogo()
+    {
+        $this->logo->delete();
+        $this->logo = null;
+    }
+
+    public function removeTempPrincipalPhoto()
+    {
+        $this->principal_photo->delete();
+        $this->principal_photo = null;
+    }
+
     private function initSettingOldValues()
     {
         $this->name_en = _Setting::where('name', 'name_en')->first()->value;
@@ -67,8 +91,9 @@ class Setting extends Component
 
 
         // Model Instance
-        $this->banner = _Setting::where('name', 'banner')->first();
-        $this->logo = _Setting::where('name', 'logo')->first();
+        $this->old_banner = _Setting::where('name', 'banner')->first()->bannerUrl();
+        $this->old_logo = _Setting::where('name', 'logo')->first()->logoUrl();
+        $this->old_principal_photo = _Setting::where('name', 'principal')->first()->principalPhotoUrl();
     }
 
 
@@ -85,6 +110,52 @@ class Setting extends Component
         _Setting::where('name', 'email')->update(['value' => $this->email]);
         _Setting::where('name', 'mobile')->update(['value' => $this->mobile]);
         _Setting::where('name', 'name_lang')->update(['value' => $this->name_lang]);
+
+        $this->updateLogo();
+        $this->updateBanner();
+        $this->updatePrincipalPhoto();
+    }
+
+
+    private function updateLogo()
+    {
+        if(!$this->logo) return;
+
+        $logo = _Setting::where('name', 'logo')->first();
+
+        $logo->addMedia($this->logo)->toMediaCollection('logo');
+
+        $this->logo = null;
+
+        $this->old_logo = $logo->logoUrl();
+
+    }
+
+
+    private function updateBanner()
+    {
+        if(!$this->banner) return;
+
+        $banner = _Setting::where('name', 'banner')->first();
+
+        $banner->addMedia($this->banner)->toMediaCollection('banner');
+
+        $this->banner = null;
+
+        $this->old_banner = $logo->bannerUrl();
+    }
+
+    private function updatePrincipalPhoto()
+    {
+        if(!$this->principal_photo) return;
+
+        $principal = _Setting::where('name', 'principal')->first();
+
+        $principal->addMedia($this->principal_photo)->toMediaCollection('principal');
+
+        $this->principal_photo = null;
+
+        $this->old_principal_photo = $principal->principalPhotoUrl();
     }
 
 }
