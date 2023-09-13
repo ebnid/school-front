@@ -70,7 +70,6 @@ Route::get('/', function(){
 });
 
 // Static Page
-
 Route::view('/teachers', 'front.pages.teachers')->name('teacher-list');
 Route::view('/staffs', 'front.pages.staffs')->name('staff-list');
 Route::get('/employee/details/{id}', \App\Http\Controllers\EmployeeDetailsController::class)->name('employee-details');
@@ -81,3 +80,6 @@ Route::view('/information/list', 'front.pages.information-gallery')->name('infor
 Route::view('/gallery', 'front.pages.gallery')->name('gallery');
 Route::get('/{page_slug}', \App\Http\Controllers\CustomPageShowController::class)->name('page');
 Route::get('/notice/{notice_slug}/{id}', \App\Http\Controllers\NoticeDetailsController::class)->name('notice');
+
+
+Route::redirect('/register', '/');
