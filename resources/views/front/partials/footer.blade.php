@@ -1,3 +1,26 @@
+@php 
+
+    $name_lang = \App\Models\Setting::where('name', 'name_lang')->first()->value;
+    $email = \App\Models\Setting::where('name', 'email')->first()->value;
+    $mobile = \App\Models\Setting::where('name', 'mobile')->first()->value;
+
+    $school_name = null;
+    $school_address = null;
+
+    if($name === 'bangla'){
+        $school_name = \App\Models\Setting::where('name', 'name_bn')->first()->value;
+        $school_address = \App\Models\Setting::where('name', 'address_bn')->first()->value;
+    }
+    
+    if($name === 'english'){
+        $school_name = \App\Models\Setting::where('name', 'name_en')->first()->value;
+        $school_address = \App\Models\Setting::where('name', 'address_en')->first()->value;
+    }
+   
+@endphp
+
+
+
 <footer class="bg-sky-900 mt-5 text-white font-bangla">
     <div class="mx-auto max-w-screen-xl space-y-8 px-4 py-16 sm:px-6 lg:space-y-16 lg:px-8">
 
@@ -5,16 +28,16 @@
           
           <div class="flex flex-col items-center">
             
-              <h1 class="text-2xl">উচাখিলা উচ্চ বিদ্যালয় ও কলেজে</h1>
+              <h1 class="text-2xl">{{ $school_name }}</h1>
 
-              <p>ইশ্বরগঞ্জ, ময়মনসিংহ।</p>
+              <p>{{ $school_address }}</p>
 
               <p class="mt-4 max-w-xs text-white">
-                info@uchakhilahss.edu.bd
+                {{ $email }}
               </p>
 
               <p class="mt-4 max-w-xs text-white">
-                Call: 01712-692739
+                Call: {{ $mobile }}
               </p>
 
             <ul class="mt-8 flex gap-6">
