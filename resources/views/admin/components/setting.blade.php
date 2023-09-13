@@ -118,7 +118,7 @@
                 <dt class="font-base  text-gray-900">Mobile No</dt>
                 <dd class="text-gray-700 sm:col-span-2">
                     <div>
-                        <x-input wire:model.debounce="mobile" class="block mt-1 w-full" type="number" />
+                        <x-input wire:model.debounce="mobile" class="block mt-1 w-full" type="text" />
                     </div>
                 </dd>
             </div>
