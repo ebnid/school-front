@@ -28,7 +28,7 @@
           
           <div class="flex flex-col items-center">
             
-              <h1 class="text-2xl">{{ $school_name }}</h1>
+              <h1 class="{{ $name_lang === 'bangla' ? 'text-2xl' : 'text-xl text-center'}} text-2xl ">{{ $school_name }}</h1>
 
               <p>{{ $school_address }}</p>
 
