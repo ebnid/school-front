@@ -6,7 +6,7 @@
                     <h1 class="text-4xl font-extrabold text-center">নোটিশ</h1>
                     <h1 class="text-3xl mt-7 text-sky-900 font-extrabold text-center">{{ $notice->name ?? '' }}</h1>
                     <p class="mt-5">{{ $notice->created_at->format('d M Y h:i A') }}</p>
-                    <p class="text-lg">{!! $notice->content ?? '' !!}</p>
+                    <p class="text-lg mt-7">{!! $notice->content ?? '' !!}</p>
                </div>
                <div class="space-y-5 mt-5">
                     @foreach($notice->contentsUrl() as $file)
