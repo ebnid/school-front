@@ -14,7 +14,7 @@
 
                 @foreach($images as $image)
                     <div class="swiper-slide">
-                        <a href="{{ $image->link }}"><img src="{{ $image->imageUrl() }}" class="w-full max-h-screen object-cover" alt="image" /></a>
+                        <a href="{{ $image->link }}"><img src="{{ $image->imageUrl() }}" class="w-full max-h-screen object-contain" alt="image" /></a>
                     </div>
                 @endforeach
 
