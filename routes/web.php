@@ -70,6 +70,8 @@ Route::get('/', function(){
 });
 
 // Static Page
+
+Route::view('/monitoring-board', 'front.pages.monitoring-board')->name('monitoring-baord');
 Route::view('/teachers', 'front.pages.teachers')->name('teacher-list');
 Route::view('/staffs', 'front.pages.staffs')->name('staff-list');
 Route::get('/employee/details/{id}', \App\Http\Controllers\EmployeeDetailsController::class)->name('employee-details');

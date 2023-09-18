@@ -17,6 +17,7 @@
                 <option value="">Select</option>
                 <option value="home-caurosel">Home Caurosel</option>
                 <option value="gallery">Gallery</option>
+                <option value="monitoring-board">Monitoring Board</option>
             </x-ui.select>
         </div>
 
