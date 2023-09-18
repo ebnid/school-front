@@ -90,9 +90,19 @@ class EditEmployee extends Component
     {
 
         $this->employee = Employee::find($id);
-        $this->join_date = $this->employee->join_date->format('Y-m-d');
-        $this->date_of_birth = $this->employee->date_of_birth->format('Y-m-d');
-        $this->current_organization_join_date = $this->employee->current_organization_join_date->format('Y-m-d');
+
+        if($this->join_date){
+            $this->join_date = $this->employee->join_date->format('Y-m-d');
+        }
+
+        if($this->date_of_birth){
+            $this->date_of_birth = $this->employee->date_of_birth->format('Y-m-d');
+        }
+
+        if($this->current_organization_join_date){
+            $this->current_organization_join_date = $this->employee->current_organization_join_date->format('Y-m-d');
+        }
+        
         $this->old_image = $this->employee->profileUrl();
         $this->is_edit_mode_on = true;
 
