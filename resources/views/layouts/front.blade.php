@@ -62,6 +62,9 @@
 
         @livewireScripts
 
+        <!-- Flowbite CDN-->
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/flowbite/1.8.1/flowbite.min.js"></script>
+
         <!-- Sweet Alert -->
         <script src="{{ asset('assets/sweetalert2/sweetalert2.min.js') }}"></script>
 
