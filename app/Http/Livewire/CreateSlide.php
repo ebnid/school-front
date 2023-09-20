@@ -90,6 +90,7 @@ class CreateSlide extends Component
             $this->slide_id = null; 
             $this->is_published = true;
             $this->slide_link = '';
+            $this->details = '';
             $this->emit('onSlideUpdated');
             $this->is_edit_mode_on = false;
             return $this->success('Updated', '');
