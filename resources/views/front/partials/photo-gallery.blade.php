@@ -16,9 +16,9 @@
       
         @foreach($images as $image)
             <div>
-                <img class="h-auto max-w-full rounded-lg" src="{{ $image->imageUrl() }}" alt="">
+                <img class="aspect-video object-contain max-w-full cursor-pointer rounded-lg" src="{{ $image->imageUrl() }}" alt="{{ $image->details ?? '' }}">
                 @if($image->details)
-                    <p class="font-bangla mt-5">{{ $image->details ?? '' }}</p>
+                    <p class="font-bangla mt-4">{{ $image->details ?? '' }}</p>
                 @endif
             </div>
         @endforeach
