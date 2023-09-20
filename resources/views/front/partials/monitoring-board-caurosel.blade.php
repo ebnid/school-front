@@ -14,7 +14,9 @@
 
                 @foreach($images as $image)
                     <div class="swiper-slide">
-                        <img src="{{ $image->imageUrl() }}" class="cursor-pointer w-full max-h-screen object-contain" alt="image" />
+                        <a href="{{ $image->link }}">
+                            <img src="{{ $image->imageUrl() }}" class="cursor-pointer w-full max-h-screen object-contain" alt="image" />
+                        </a>
                     </div>
                 @endforeach
 
@@ -55,37 +57,6 @@
                 },
             });
         </script>
-
-        <script src="{{ asset('assets/jquery/jquery.slim.min.js') }}"></script>
-        <script src="{{ asset('assets/viewerjs/viewer.js') }}"></script>
-
-        <script>
-            window.addEventListener('DOMContentLoaded', function () {
-
-                let images = Array.from(document.querySelectorAll('img'));
-                
-                images.forEach(img => {
-
-                    img.addEventListener('click', function (event) {
-                        var image = new Image();
-
-                        image.src = event.target.src;
-
-                        var viewer = new Viewer(image, {
-                            hidden: function () {
-                                viewer.destroy();
-                            },
-                        });
-
-                        // image.click();
-                        viewer.show();
-                    });
-
-                })
-
-            });
-        </script>
-
     @endpush
 
 @endif
