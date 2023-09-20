@@ -19,6 +19,9 @@
                 @endforeach
 
             </div>
+            <button class="swiper-button-prev text-sky-900"></button>
+
+            <button class="swiper-button-next text-sky-900"></button>
             <div class="swiper-pagination"></div>
         </div>
     </div>
