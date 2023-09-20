@@ -1,10 +1,10 @@
 <?php
 
-namespace App\Http\Livewire\Attendace;
+namespace App\Http\Livewire\Attendance;
 
 use Livewire\Component;
 
-class Summery extends Component
+class Summary extends Component
 {
     public function render()
     {

@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Http\Livewire\Attendace;
+namespace App\Http\Livewire\Attendance;
 
 use Livewire\Component;
 
