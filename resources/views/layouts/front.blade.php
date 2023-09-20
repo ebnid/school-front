@@ -42,7 +42,9 @@
         @include('front.partials.header')
 
 
-        @include('front.partials.banner')
+        @if($isBannerShow)
+            @include('front.partials.banner')
+        @endif
 
 
         <main class="px-3 md:px-0">
