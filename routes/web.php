@@ -55,6 +55,11 @@ Route::middleware([
     // Announcement
     Route::view('/announcement/create', 'admin.pages.announcement.create')->name('announcement.create');
 
+    // Attendances
+    Route::view('/attendances/import', 'admin.pages.attendances.import')->name('attendances.import');
+    Route::view('/attendances/teachers', 'admin.pages.attendances.teachers')->name('attendances.teachers');
+    Route::view('/attendances/summery', 'admin.pages.attendances.summary')->name('attendances.summary');
+
     // Teacher/Staff/Employee
     Route::view('/teacher-staffs/create', 'admin.pages.teachers-staffs.create')->name('teacher-staffs.create');
     Route::view('/teacher-staffs/list', 'admin.pages.teachers-staffs.list')->name('teacher-staffs.list');
