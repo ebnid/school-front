@@ -56,6 +56,37 @@
             });
         </script>
 
+        <script src="{{ asset('assets/jquery/jquery.slim.min.js') }}"></script>
+        <script src="{{ asset('assets/viewerjs/viewer.js') }}"></script>
+
+        <script>
+            window.addEventListener('DOMContentLoaded', function () {
+
+                let images = Array.from(document.querySelectorAll('img'));
+                
+                images.forEach(img => {
+
+                    img.addEventListener('click', function (event) {
+                        var image = new Image();
+
+                        image.src = event.target.src;
+
+                        var viewer = new Viewer(image, {
+                            hidden: function () {
+                                viewer.destroy();
+                            },
+                        });
+
+                        // image.click();
+                        viewer.show();
+                    });
+
+                })
+
+            });
+        </script>
+    @endpush
+
     @endpush
 
 @endif
