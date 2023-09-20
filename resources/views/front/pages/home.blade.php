@@ -1,5 +1,9 @@
 <x-front-layout>
 
+    @slot('banner')
+        @include('front.partials.banner')
+    @endslot
+
     <section class="container mx-auto mt-2 md:mt-5">
         @include('front.partials.home-caurosel')
     </section>

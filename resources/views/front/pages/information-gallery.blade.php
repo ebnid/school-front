@@ -1,5 +1,9 @@
 <x-front-layout>
 
+    @slot('banner')
+        @include('front.partials.banner')
+    @endslot
+
     <section class="mt-5">
         <div class="container mx-auto">
             <div class="grid grid-cols-1 md:grid-cols-3 gap-5">

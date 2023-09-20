@@ -1,10 +1,4 @@
 
-@php 
-
-    $isShowBanner = false;
-
-@endphp
-
 <x-front-layout>
 
     <section class="container mx-auto mt-2 md:mt-5">
