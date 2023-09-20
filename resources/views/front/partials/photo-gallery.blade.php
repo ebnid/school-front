@@ -19,7 +19,7 @@
                 <img class="h-auto max-w-full rounded-lg" src="{{ $image->imageUrl() }}" alt="">
                 @if($image->details)
                     <p class="font-bangla mt-5">{{ $image->details ?? '' }}</p>
-                @eindif
+                @endif
             </div>
         @endforeach
 
