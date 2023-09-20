@@ -15,6 +15,7 @@ class CreateSlide extends Component
     // From State
     public $cauroselId;
     public $slide_link;
+    public $details;
     public $is_published = true;
     public $image;
     public $old_image;
@@ -23,6 +24,7 @@ class CreateSlide extends Component
 
     protected $rules = [
         'slide_link' => ['nullable', 'string'],
+        'details' => ['nullable', 'string', 'max:2000'],
         'is_published' => ['required', 'boolean'],
         'image' => ['required', 'image'],
     ];
@@ -46,18 +48,20 @@ class CreateSlide extends Component
     {
         $this->validate();
 
-        $Slide = Slide::create([
+        $slide = Slide::create([
             'slide_link' => $this->slide_link,
+            'details' => $this->details,
             'is_published' => $this->is_published,
             'caurosel_id' => $this->cauroselId,
         ]);
 
-        if(!$Slide) return $this->error('Failed', 'Failed to create Slide. Try again');
+        if(!$slide) return $this->error('Failed', 'Failed to create Slide. Try again');
 
         if($this->image){
-            $Slide->addMedia($this->image)->toMediaCollection('image');
+            $slide->addMedia($this->image)->toMediaCollection('image');
             $this->image = null;
             $this->slide_link = null;
+            $this->details = null;
             $this->is_published = true;
             $this->emit('onSlideCreated');
             return $this->success('Created', 'Slide created successfully');
@@ -73,6 +77,7 @@ class CreateSlide extends Component
         $slide = Slide::find($this->slide_id);
 
         $slide->slide_link = $this->slide_link;
+        $slide->details = $this->details;
         $slide->is_published = $this->is_published;
         
         if($this->image){
@@ -100,6 +105,7 @@ class CreateSlide extends Component
 
         $this->slide_id = $slide->id; 
         $this->slide_link = $slide->slide_link;
+        $this->details = $slide->details;
         $this->is_published = $slide->is_published;
         $this->old_image = $slide->imageUrl();
 
@@ -115,6 +121,7 @@ class CreateSlide extends Component
         $this->slide_id = null; 
         $this->is_published = true;
         $this->slide_link = '';
+        $this->details = '';
         $this->is_edit_mode_on = false;
     }
 

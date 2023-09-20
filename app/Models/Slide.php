@@ -18,6 +18,7 @@ class Slide extends Model implements HasMedia
     protected $fillable = [
         'caurosel_id',
         'slide_link',
+        'details',
         'is_published',
     ];
 
