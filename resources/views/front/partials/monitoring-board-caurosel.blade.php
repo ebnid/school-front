@@ -9,8 +9,8 @@
 @if($home_caurosel)
 
     <div class="bg-white md:p-5">
-        <div class="swiper max-container mx-auto" id="home-caurosel">
-            <div class="swiper-wrapper relative">
+        <div class="swiper max-container mx-auto relative" id="home-caurosel">
+            <div class="swiper-wrapper">
 
                 @foreach($images as $image)
                     <div class="swiper-slide">
@@ -18,6 +18,7 @@
                     </div>
                 @endforeach
 
+            </div>
                 <button class="caurosel-prev-btn absolute w-10 h-10 rgiht-10 top-1/2">
                     <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
                         <path stroke-linecap="round" stroke-linejoin="round" d="M10.5 19.5L3 12m0 0l7.5-7.5M3 12h18" />
@@ -29,8 +30,6 @@
                         <path stroke-linecap="round" stroke-linejoin="round" d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3" />
                     </svg>
                 </button>
-
-            </div>
             <div class="swiper-pagination"></div>
         </div>
     </div>
