@@ -19,9 +19,9 @@
                 @endforeach
 
             </div>
-            <button class="swiper-button-prev text-sky-900"></button>
+            <button class="swiper-button-prev"></button>
 
-            <button class="swiper-button-next text-sky-900"></button>
+            <button class="swiper-button-next"></button>
             <div class="swiper-pagination"></div>
         </div>
     </div>
@@ -36,10 +36,10 @@
 
         <script>
             const swiper1 = new Swiper("#home-caurosel", {
-                // navigation: {
-                //     nextEl: '.swiper-button-next-ex1',
-                //     prevEl: '.swiper-button-prev-ex1',
-                // },
+                navigation: {
+                    nextEl: '.swiper-button-next',
+                    prevEl: '.swiper-button-prev',
+                },
                 slidesPerView: 1, // Number of slides visible in the viewport
                 spaceBetween: 20,
                 loop: true,
