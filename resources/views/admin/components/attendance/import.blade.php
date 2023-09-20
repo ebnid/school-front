@@ -25,11 +25,13 @@
     @if($file)
         <div class="mt-5 flex gap-5 justify-center">
             <x-button type="button" wire:click.debounce="startImport">
-                Start Import
+                <span wire:loading.remove wire:target="startImport">Start Import</span>
+                <span wire:loading wire:target="startImport">Processing...</span>
             </x-button>
 
             <x-button type="button" wire:click.debounce="removeTempFile" >
-                Remove File
+                <span wire:loading.remove wire:target="removeTempFile">Remove File</span>
+                <span wire:loading wire:target="removeTempFile">Removing...</span>
             </x-button>
         </div>
     @endif

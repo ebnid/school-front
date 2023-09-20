@@ -3,12 +3,14 @@
 namespace App\Http\Livewire;
 
 use Livewire\Component;
+use Livewire\WithPagination;
 use App\Models\Slide;
 use App\Traits\WithSweetAlert;
 
 class SlideList extends Component
 {
     use WithSweetAlert;
+    use WithPagination;
 
     public $search;
     public $caurosel_id;
