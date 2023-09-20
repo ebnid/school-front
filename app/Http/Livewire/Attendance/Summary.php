@@ -8,6 +8,6 @@ class Summary extends Component
 {
     public function render()
     {
-        return view('admin.components.attendace.summery');
+        return view('admin.components.attendance.summery');
     }
 }

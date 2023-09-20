@@ -8,6 +8,6 @@ class SingleTeacherSummery extends Component
 {
     public function render()
     {
-        return view('admin.components.attendace.single-teacher-summery');
+        return view('admin.components.attendance.single-teacher-summery');
     }
 }

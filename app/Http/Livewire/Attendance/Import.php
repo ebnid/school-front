@@ -8,6 +8,6 @@ class Import extends Component
 {
     public function render()
     {
-        return view('admin.components.attendace.import');
+        return view('admin.components.attendance.import');
     }
 }
