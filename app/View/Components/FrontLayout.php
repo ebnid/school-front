@@ -9,13 +9,11 @@ use Illuminate\View\Component;
 class FrontLayout extends Component
 {
 
-    public $isBannerShow = true;
     /**
      * Create a new component instance.
      */
-    public function __construct($isBannerShow = true)
+    public function __construct()
     {
-        $this->isBannerShow = $isBannerShow;
     }
 
     /**
