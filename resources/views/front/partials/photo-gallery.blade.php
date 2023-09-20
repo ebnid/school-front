@@ -18,7 +18,7 @@
             <div>
                 <img class="object-contain max-w-full cursor-pointer rounded-md" src="{{ $image->imageUrl() }}" alt="{{ $image->details ?? '' }}">
                 @if($image->details)
-                    <p class="font-bangla mt-4">{{ $image->details ?? '' }}</p>
+                    <p class="font-bangla mt-4 text-lg">{{ $image->details ?? '' }}</p>
                 @endif
             </div>
         @endforeach
