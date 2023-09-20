@@ -44,12 +44,12 @@
 
         <script>
             const swiper1 = new Swiper("#home-caurosel", {
-                // navigation: {
-                //     nextEl: '.caurosel-next-btn',
-                //     prevEl: '.caurosel-prev-btn',
-                // },
-                nextButton: '.caurosel-next-btn',
-                prevButton: '.caurosel-next-btn',
+                navigation: {
+                    nextEl: '.caurosel-next-btn',
+                    prevEl: '.caurosel-prev-btn',
+                },
+                // nextButton: '.caurosel-next-btn',
+                // prevButton: '.caurosel-next-btn',
                 slidesPerView: 1, // Number of slides visible in the viewport
                 spaceBetween: 20,
                 loop: true,
