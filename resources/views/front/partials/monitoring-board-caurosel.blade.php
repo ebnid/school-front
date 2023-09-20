@@ -87,6 +87,4 @@
         </script>
     @endpush
 
-    @endpush
-
 @endif
