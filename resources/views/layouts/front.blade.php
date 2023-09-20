@@ -41,8 +41,9 @@
 
         @include('front.partials.header')
 
-
-        {{ $banner }}
+        @if($banner)
+            {{ $banner }}
+        @endif
 
 
         <main class="px-3 md:px-0">
