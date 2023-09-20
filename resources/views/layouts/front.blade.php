@@ -41,7 +41,7 @@
 
         @include('front.partials.header')
 
-        @if($banner)
+        @if($banner ?? false)
             {{ $banner }}
         @endif
 
