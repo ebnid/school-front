@@ -80,7 +80,7 @@ class SlideList extends Component
             $query->where('slide_link', 'like', '%' . $search . '%');
         });
 
-        return $query->paginate(25);
+        return $query->paginate(10);
 
     }
 }
