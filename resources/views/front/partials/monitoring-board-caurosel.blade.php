@@ -19,9 +19,9 @@
                 @endforeach
 
             </div>
-                <button class="swiper-button-prev absolute w-10 h-10 right-10 top-1/2"></button>
+                <button class="swiper-button-prev"></button>
 
-                <button class="swiper-button-next absolute w-10 h-10 left-10 top-1/2"></button>
+                <button class="swiper-button-next"></button>
             <div class="swiper-pagination"></div>
         </div>
     </div>
