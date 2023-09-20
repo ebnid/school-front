@@ -7,6 +7,7 @@ use Maatwebsite\Excel\Concerns\ToModel;
 use Maatwebsite\Excel\Concerns\WithHeadingRow;
 use Maatwebsite\Excel\Concerns\Importable;
 use Maatwebsite\Excel\Concerns\WithValidation;
+use Carbon\Carbon;
 
 class AttendanceImport implements ToModel, WithHeadingRow, WithValidation
 {
@@ -21,7 +22,10 @@ class AttendanceImport implements ToModel, WithHeadingRow, WithValidation
     public function model(array $row)
     {
         return new Attendance([
-            //
+            'name' => $row['name'],
+            'date' => Carbon::createFromFormat('n/j/Y', $row['date'])->format('Y-m-d'),
+            'clock_in' => $row['clock_in'],
+            'clock_out' => $row['clock_out'],
         ]);
     }
 
@@ -29,7 +33,7 @@ class AttendanceImport implements ToModel, WithHeadingRow, WithValidation
     public function rules(): array 
     {
         return [
-            'date' => ['required', 'date', 'unique:attendances']
+            '*.date' => ['required', 'date', 'unique:attendances']
         ];
     }
 }

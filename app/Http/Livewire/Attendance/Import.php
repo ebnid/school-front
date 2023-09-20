@@ -5,6 +5,7 @@ namespace App\Http\Livewire\Attendance;
 use Livewire\Component;
 use Livewire\WithFileUploads;
 use App\Traits\WithSweetAlert;
+use App\Imports\AttendanceImport;
 
 class Import extends Component
 {
@@ -29,6 +30,13 @@ class Import extends Component
     public function startImport()
     {
         $this->validate();
+
+        $attendanceImporter = new AttendanceImport();
+
+        $attendanceImporter->import($this->file);
+
+        
+        
     }
 
 
