@@ -96,7 +96,7 @@
             <a href="{{ route('attendances.teachers') }}" class="border-l cursor-pointer flex items-center text-sm py-1 px-3 hover:bg-gray-700" >
                 Teacher Wise
             </a>
-            <a href="{{ route('caurosels.summery') }}" class="border-l cursor-pointer flex items-center text-sm py-1 px-3 hover:bg-gray-700" >
+            <a href="{{ route('attendances.summery') }}" class="border-l cursor-pointer flex items-center text-sm py-1 px-3 hover:bg-gray-700" >
                 Summery
             </a>
         </div>
