@@ -7,7 +7,8 @@ use Livewire\WithFileUploads;
 use App\Traits\WithSweetAlert;
 use App\Imports\AttendanceImport;
 use Maatwebsite\Excel\Facades\Excel;
-use App\Model\Attendance;
+use App\Models\Attendance;
+use Carbon\Carbon;
 
 class Import extends Component
 {
@@ -34,7 +35,11 @@ class Import extends Component
         $this->validate();
 
 
-        dd($this->checkIsAlreadyImported());
+        $result = $this->checkIsAlreadyImported();
+
+        if($result['is_already_exists_any_row']){
+            return $this->error('Data already exists', "Total row {$result['total_row']} and already exists {$result['exists_row']}");
+        }
 
         try {
 
@@ -65,13 +70,36 @@ class Import extends Component
 
     private function checkIsAlreadyImported()
     {
-        $attendances = Excel::toArray(null, $this->file);
+        $attendances = Excel::toArray(null, $this->file)[0];
 
-        $isAlreadyExistsAnyRow = false;
-        
-        foreach($attendances as $attendance){
+        $totalRow = count($attendances);
+
+        $isAlreadyExistsCountRow = 0;
+
+        foreach($attendances as $index => $attendance){
+
+            if($index === 0) continue;
+
+            $exists =  Attendance::where('name', $attendance[1])->whereDate('date', Carbon::createFromFormat('m/d/Y', $attendance[2])->format('Y-m-d'))->exists();
+           
+            if($exists){
+                $isAlreadyExistsCountRow++;
+            }
 
         }
+
+
+        if(!$isAlreadyExistsCountRow) {
+            return [
+                'is_already_exists_any_row' => false,
+            ];
+        }
+
+        return [
+            'is_already_exists_any_row' => true,
+            'total_row' => $totalRow,
+            'exists_row' => $isAlreadyExistsCountRow
+        ];
 
     }
 }

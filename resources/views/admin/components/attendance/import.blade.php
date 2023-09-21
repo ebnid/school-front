@@ -38,4 +38,5 @@
 
 
     <x-ui.text-loading-spinner wire:loading wire:loading.flex wire:target="file"  loadingText="Uploading file..."/>
+    <x-ui.text-loading-spinner wire:loading wire:loading.flex wire:target="startImport"  loadingText="Importing...It will take a time..Please wait..."/>
 </div>
