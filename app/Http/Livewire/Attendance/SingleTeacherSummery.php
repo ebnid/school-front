@@ -56,7 +56,13 @@ class SingleTeacherSummery extends Component
         return $query->get();
     }
 
-    public function getAllTeachers()
+    private function setCurrentDateAndYear()
+    {
+        $this->year = now()->year;
+        $this->month = now()->month;
+    }
+
+    private function getAllTeachers()
     {
         return Attendance::select('name')->groupBy('name')->get();
     }
@@ -64,6 +70,7 @@ class SingleTeacherSummery extends Component
     public function initData()
     {
         $this->generateYear();
+        $this->setCurrentDateAndYear();
     }
 
     private function generateYear()

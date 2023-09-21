@@ -59,6 +59,8 @@ Route::middleware([
     Route::view('/attendances/import', 'admin.pages.attendances.import')->name('attendances.import');
     Route::view('/attendances/teachers', 'admin.pages.attendances.teachers')->name('attendances.teachers');
     Route::view('/attendances/summery', 'admin.pages.attendances.summary')->name('attendances.summary');
+    Route::view('/attendances/summery/print/{year}/{month}', 'admin.pages.attendances.print-summary')->name('attendances.print-summary');
+    Route::view('/attendances/summery/print/{name}/{year}/{month}', 'admin.pages.attendances.print-single-teacher-details')->name('attendances.print-single-teacher-details');
 
     // Teacher/Staff/Employee
     Route::view('/teacher-staffs/create', 'admin.pages.teachers-staffs.create')->name('teacher-staffs.create');
