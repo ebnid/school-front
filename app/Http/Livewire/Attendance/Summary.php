@@ -40,7 +40,12 @@ class Summary extends Component
         $this->isHasReprot();
     }
 
-    private function isHasReport()
+    public function updatedYear()
+    {
+        $this->isHasReprot();
+    }
+
+    public function isHasReport()
     {
         $this->is_has_report = Attendance::whereYear('date', $this->year)->whereMonth('date', $this->month)->exists();
     }
