@@ -29,12 +29,14 @@
                         $prinicpal_signature = \App\Models\Setting::where('name', 'principal_signature')->first()->principalSignatureUrl();
                     @endphp
 
-                    <div class="mt-20 w-1/3 flex flex-col items-center">
-                        <img class="w-1/2 block" src="{{ $prinicpal_signature }}">
-                        <h2>মোহাম্মদ আবদুল হালিম</h2>  
-                        <p>অধ্যক্ষ</p>
-                        <p>উচাখিলা উচ্চ মাধ্যমিক বিদ্যালয় ও কলেজ</p>
-                        <p>ঈশ্বরগঞ্জ, ময়মনসিংহ</p>
+                    <div class="max-w-3xl mx-auto">
+                        <div class="mt-20 w-1/3 flex flex-col items-center">
+                            <img class="w-1/2 block" src="{{ $prinicpal_signature }}">
+                            <h2 class="text-lg font-bold mt-5">মোহাম্মদ আবদুল হালিম</h2>  
+                            <p class="text-md">অধ্যক্ষ</p>
+                            <p class="text-base">উচাখিলা উচ্চ মাধ্যমিক বিদ্যালয় ও কলেজ</p>
+                            <p class="text-base">ঈশ্বরগঞ্জ, ময়মনসিংহ</p>
+                        </div>
                     </div>
                 @endif
             </div>
