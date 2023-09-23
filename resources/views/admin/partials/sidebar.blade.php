@@ -94,7 +94,7 @@
                 Import
             </a>
             <a href="{{ route('attendances.teachers') }}" class="border-l cursor-pointer flex items-center text-sm py-1 px-3 hover:bg-gray-700" >
-                Teacher Wise
+                Single Teacher
             </a>
             <a href="{{ route('attendances.summary') }}" class="border-l cursor-pointer flex items-center text-sm py-1 px-3 hover:bg-gray-700" >
                 Summery
