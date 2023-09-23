@@ -28,10 +28,12 @@ class Setting extends Component
     public $banner;
     public $logo;
     public $principal_photo;
+    public $principal_signature;
 
     public $old_banner;
     public $old_logo;
     public $old_principal_photo;
+    public $old_principal_signature;
 
 
     public function mount()
@@ -77,6 +79,12 @@ class Setting extends Component
         $this->principal_photo = null;
     }
 
+    public function removeTempPrincipalSignature()
+    {
+        $this->principal_signature->delete();
+        $this->principal_signature = null;
+    }
+
     private function initSettingOldValues()
     {
         $this->name_en = _Setting::where('name', 'name_en')->first()->value;
@@ -98,6 +106,7 @@ class Setting extends Component
         $this->old_banner = _Setting::where('name', 'banner')->first()->bannerUrl();
         $this->old_logo = _Setting::where('name', 'logo')->first()->logoUrl();
         $this->old_principal_photo = _Setting::where('name', 'principal')->first()->principalPhotoUrl();
+        $this->old_principal_signature = _Setting::where('name', 'principal_signature')->first()->principalSignatureUrl();
     }
 
 
@@ -120,6 +129,7 @@ class Setting extends Component
         $this->updateLogo();
         $this->updateBanner();
         $this->updatePrincipalPhoto();
+        $this->updatePrincipalSignature();
     }
 
 
@@ -162,6 +172,19 @@ class Setting extends Component
         $this->principal_photo = null;
 
         $this->old_principal_photo = $principal->principalPhotoUrl();
+    }
+
+    private function updatePrincipalSignature()
+    {
+        if(!$this->principal_signature) return;
+
+        $principal_signature = _Setting::where('name', 'principal_signature')->first();
+
+        $principal_signature->addMedia($this->principal_signature)->toMediaCollection('principal_signature');
+
+        $this->principal_signature = null;
+
+        $this->old_principal_signature = $principal_signature->principalSignatureUrl();
     }
 
 }

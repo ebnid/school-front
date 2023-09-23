@@ -123,6 +123,45 @@
                 </dd>
             </div>
 
+            
+            <div class="text-lg grid grid-cols-1 gap-1 py-3 sm:grid-cols-3 sm:gap-4">
+                <dt class="font-base  text-gray-900">Principal Signature</dt>
+                <dd class="text-gray-700 sm:col-span-2">
+                    <div>
+                        @if(!$principal_signature && $old_principal_signature)
+                            <div class="flex items-center justify-center mb-3">
+                                <img class="rounded-md w-36 h-36 aspect-square object-contain block" src="{{ $old_principal_signature ?? '' }}">
+                            </div>
+                        @endif
+
+                        @if($principal_signature)
+                            <div class="">
+                                <div class="flex items-center justify-center">
+                                    @if($principal_signature)
+                                        <img class="w-36 h-36 aspect-square rounded-md object-contain block" src="{{ $principal_signature->temporaryUrl() }}">
+                                    @endif
+                                </div>
+                                <div class="flex items-center justify-center mt-2">
+                                    <button wire:click.debounce="removeTempPrincipalSignature" class="inline-flex items-center px-2 py-1 bg-gray-800 border border-transparent rounded-md font-semibold text-xs text-white uppercase tracking-widest ">Remove</button>
+                                </div>
+                            </div>
+                        @else
+                        <div>
+                            <div class="flex items-center justify-center">
+                                <label class="w-full flex flex-col items-center px-4 py-4 bg-white text-blue rounded-lg tracking-wide uppercase border border-blue cursor-pointer hover:bg-blue hover:text-gray-800">
+                                    <svg class="w-6 h-6" fill="currentColor" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20">
+                                        <path d="M16.88 9.1A4 4 0 0 1 16 17H5a5 5 0 0 1-1-9.9V7a3 3 0 0 1 4.52-2.59A4.98 4.98 0 0 1 17 8c0 .38-.04.74-.12 1.1zM11 11h3l-4-4-4 4h3v3h2v-3z" />
+                                    </svg>
+                                    <span class="mt-2 text-xs leading-normal">Select a Image</span>
+                                    <input wire:model="principal_signature" type='file' class="hidden" />
+                                </label>
+                            </div>
+                        </div>
+                        @endif
+                    </div>
+                </dd>
+            </div>
+
 
             <div class="text-lg grid grid-cols-1 gap-1 py-3 sm:grid-cols-3 sm:gap-4">
                 <dt class="font-base  text-gray-900">Logo</dt>

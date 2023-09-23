@@ -23,6 +23,7 @@ class Setting extends Model implements HasMedia
         $this->addMediaCollection('banner')->singleFile();
         $this->addMediaCollection('logo')->singleFile();
         $this->addMediaCollection('principal')->singleFile();
+        $this->addMediaCollection('principal_signature')->singleFile();
     }
 
 
@@ -51,6 +52,16 @@ class Setting extends Model implements HasMedia
         if($this->hasMedia('principal'))
         {
             return $this->getFirstMedia('principal')->getUrl();
+        }
+        
+        return '';
+    }
+
+    public function principalSignatureUrl()
+    {
+        if($this->hasMedia('principal_signature'))
+        {
+            return $this->getFirstMedia('principal_signature')->getUrl();
         }
         
         return '';
