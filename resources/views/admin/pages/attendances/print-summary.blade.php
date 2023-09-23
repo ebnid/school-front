@@ -135,10 +135,10 @@
 <body>
     <main class="mx-auto">
 
-        <h1 class="text-center font-bold text-4xl mt-10">{{ $school_name }}</h1>
+        <h1 class="text-center font-bold text-5xl mt-10">{{ $school_name }}</h1>
         <h3 class="text-center text-3xl mt-3">{{ $school_address }}</h3>
 
-        <h2 class="text-center text-5xl mt-5">Teacher & Staff Attendance Report, {{ getMonthName($target_month) }}-{{ $target_year }}</h2>
+        <h2 class="text-center text-4xl mt-5">Teacher & Staff Attendance Report, {{ getMonthName($target_month) }}-{{ $target_year }}</h2>
 
         <table class="mt-10">
             <thead>
