@@ -37,12 +37,12 @@ class Summary extends Component
 
     public function updatedMonth()
     {
-        $this->isHasReprot();
+        $this->isHasReport();
     }
 
     public function updatedYear()
     {
-        $this->isHasReprot();
+        $this->isHasReport();
     }
 
     public function isHasReport()
