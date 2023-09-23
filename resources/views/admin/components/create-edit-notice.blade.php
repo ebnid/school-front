@@ -110,7 +110,7 @@
             </div>
         </div>
 
-        <div class="block">
+        <div class="block mt-5">
             <label for="is_include_principal_signature" class="flex items-center">
                 <x-checkbox wire:model="is_include_principal_signature" id="is_include_principal_signature" />
                 <span class="ml-2 text-sm text-gray-600">{{ __('Include Principal Signature') }}</span>
