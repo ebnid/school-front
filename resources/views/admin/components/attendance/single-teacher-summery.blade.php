@@ -4,8 +4,8 @@
             <label for="year" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Year</label>
             <select wire:model.debounce="year" id="year" class="bg-gray-50 border border-gray-300 text-gray-900 text-md rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500">
                 <option selected value="">Choose a year</option>
-                @foreach($years ?? [] as $year)
-                    <option value="{{ $year }}">{{ $year ?? '' }}</option>
+                @foreach($years ?? [] as $_year)
+                    <option value="{{ $_year }}">{{ $_year ?? '' }}</option>
                 @endforeach
             </select>
         </div>
@@ -14,8 +14,8 @@
             <label for="ymonthear" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Month</label>
             <select wire:model.debounce="month" id="month" class="bg-gray-50 border border-gray-300 text-gray-900 text-md rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500">
                 <option selected value="">Choose a month</option>
-                @foreach($months ?? [] as $index => $month)
-                    <option value="{{ ++$index }}">{{ $month ?? '' }}</option>
+                @foreach($months ?? [] as $index => $_month)
+                    <option value="{{ ++$index }}">{{ $_month ?? '' }}</option>
                 @endforeach
             </select>
         </div>
@@ -24,8 +24,8 @@
             <label for="teacher" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Teacher</label>
             <select wire:model.debounce="teacher" id="month" class="bg-gray-50 border border-gray-300 text-gray-900 text-md rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500">
                 <option selected value="">Choose a Teacher</option>
-                @foreach($teachers ?? [] as $teacher)
-                    <option value="{{ $teacher->name }}">{{ $teacher->name }}</option>
+                @foreach($teachers ?? [] as $_teacher)
+                    <option value="{{ $_teacher->name }}">{{ $_teacher->name }}</option>
                 @endforeach
             </select>
         </div>
@@ -33,7 +33,7 @@
 
     @if(count($attendances) > 0)
         <div class="py-10 flex justify-end">
-            <a href="{{ route('attendances.print-single-teacher-details', [ 'teacher' => $this->name, 'year' => $this->year, 'month' => $this->year ]) }}" class="inline-flex items-center px-4 py-2 bg-gray-800 border border-transparent rounded-md font-semibold text-xs text-white uppercase tracking-widest hover:bg-gray-700 focus:bg-gray-700 active:bg-gray-900 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2 transition ease-in-out duration-150">Print</a>
+            <a href="{{ route('attendances.print-single-teacher-details', [ 'name' => $this->teacher, 'year' => $this->year, 'month' => $this->month ]) }}" class="inline-flex items-center px-4 py-2 bg-gray-800 border border-transparent rounded-md font-semibold text-xs text-white uppercase tracking-widest hover:bg-gray-700 focus:bg-gray-700 active:bg-gray-900 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2 transition ease-in-out duration-150">Print</a>
         </div>
 
         <div class="relative overflow-x-auto mt-5">

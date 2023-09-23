@@ -140,7 +140,7 @@
 
         <h2 class="text-center text-4xl mt-5">Teacher & Staff Attendance Report, {{ getMonthName($target_month) }}-{{ $target_year }}</h2>
 
-        <table class="mt-10">
+        <table class="mt-10 w-full">
             <thead>
                 <tr>
                     <th rowspan="2" clas="text-lg">#</th>
@@ -158,12 +158,11 @@
             <tbody>
                 @foreach($teaders_list as $_teacher)
                     <tr>
-                        <td class="text-lg">{{ ++$loop->index }}</td>
-                        <td class="whitespace-nowrap text-center vertical-center vertical-center text-lg px-2">{{ $_teacher->name }}</td>
+                        <td class="text-lg vertical-center text-center">{{ ++$loop->index }}</td>
+                        <td class="whitespace-nowrap text-center vertical-center text-lg px-2">{{ $_teacher->name }}</td>
                         @foreach(getDaysOfMonth($target_year, $target_month) as $date)
 
                             @php 
-                                 // $attendance = \App\Models\Attendance::whereYear('date', getYear($date))->whereMonth('date', getMonth($date))->whereDay('date', getDay($date))->where('name', $_teacher->name)->first();
                                 $attendance = \App\Models\Attendance::whereDate('date', $date)->where('name', $_teacher->name)->first();
                             @endphp
 
