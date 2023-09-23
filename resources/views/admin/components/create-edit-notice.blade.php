@@ -110,6 +110,13 @@
             </div>
         </div>
 
+        <div class="block">
+            <label for="is_include_principal_signature" class="flex items-center">
+                <x-checkbox wire:model="is_include_principal_signature" id="is_include_principal_signature" />
+                <span class="ml-2 text-sm text-gray-600">{{ __('Include Principal Signature') }}</span>
+            </label>
+        </div>
+
         <div class="flex items-center justify-end mt-8">
             @if($is_edit_mode_on)
                 <x-button wire:click.debounce="updateNotice" class="ml-4">

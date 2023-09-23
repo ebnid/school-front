@@ -20,6 +20,7 @@ class CreateEditNotice extends Component
     public $content;
     public $order;
     public $is_published;
+    public $is_include_principal_signature = false;
     public $lang = 'bangla';
 
     public $notice_id;
@@ -99,6 +100,7 @@ class CreateEditNotice extends Component
         $notice->lang = $this->lang;
         $notice->order = $this->order;
         $notice->is_published = $this->is_published;
+        $notice->is_include_principal_signature = $this->is_include_principal_signature;
 
 
         if(!$notice->save()) return $this->error('Failed', 'Failed to create new Notice. Something went wrong.');
@@ -135,6 +137,7 @@ class CreateEditNotice extends Component
         $notice->content = $this->content;
         $notice->is_published = $this->is_published;
         $notice->order = $this->order;
+        $notice->is_include_principal_signature = $this->is_include_principal_signature;
         $notice->is_published = $this->is_published;
 
         if(!$notice->save()) return $this->error('Failed', 'Failed to updated Notice. Something went wrong.');
@@ -166,6 +169,7 @@ class CreateEditNotice extends Component
         $this->content = $notice->content;
         $this->order = $notice->order;
         $this->lang = $notice->lang;
+        $this->is_include_principal_signature = $notice->is_include_principal_signature; 
         $this->is_published = $notice->is_published;
 
         $this->old_contents = $notice->getMedia('contents');

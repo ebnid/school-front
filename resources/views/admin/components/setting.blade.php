@@ -285,5 +285,5 @@
         <x-button wire:click.debounce="saveChanges">Save</x-button>
     </div>
 
-    <x-ui.loading-spinner wire:loading.flex wire:target="saveChanges, logo, banner, principal_photo, removeTempLogo, removeTempBanner, removeTempPrincipalPhoto" />
+    <x-ui.loading-spinner wire:loading.flex wire:target="saveChanges, logo, banner, principal_photo, principal_signature, removeTempPrincipalSignature, removeTempLogo, removeTempBanner, removeTempPrincipalPhoto" />
 </div>
