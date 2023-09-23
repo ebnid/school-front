@@ -27,5 +27,6 @@ class SettingSeeder extends Seeder
         Setting::create(['name' => 'banner', 'value' => null]);
         Setting::create(['name' => 'logo', 'value' => null]);
         Setting::create(['name' => 'name_lang', 'value' => null]);
+        Setting::create(['name' => 'principal_signature', 'value' => null]);
     }
 }
