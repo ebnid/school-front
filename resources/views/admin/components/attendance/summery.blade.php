@@ -21,10 +21,14 @@
         </div>
     </div>
 
-    @if(true)
-        <div class="py-10 flex justify-end">
+    @if($is_report_has)
+        <div class="py-10 flex justify-center">
             <a href="{{ route('attendances.print-summary', ['year' => $year, 'month' => $month]) }}" class="inline-flex items-center px-4 py-2 bg-gray-800 border border-transparent rounded-md font-semibold text-xs text-white uppercase tracking-widest hover:bg-gray-700 focus:bg-gray-700 active:bg-gray-900 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2 transition ease-in-out duration-150">Print</a>
         </div>
+    @else 
+    <div class="p-4 mb-4 mt-10 text-sm text-blue-800 rounded-lg bg-blue-50 dark:bg-gray-800 dark:text-blue-400" role="alert">
+        <span class="font-medium">There is no reports found on this date!</span>
+    </div>
     @endif
     <x-ui.text-loading-spinner wire:loading wire:loading.flex wire:target="year, month"  loadingText="Loading..."/>
 </div>

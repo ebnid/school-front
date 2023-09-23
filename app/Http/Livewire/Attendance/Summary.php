@@ -21,6 +21,8 @@ class Summary extends Component
     public $month;
     public $year;
 
+    public $is_report_has = false;
+
 
     public function mount()
     {
@@ -33,7 +35,15 @@ class Summary extends Component
         return view('admin.components.attendance.summery');
     }
 
+    public function updatedMonth()
+    {
+        $this->isHasReprot();
+    }
 
+    private function isHasReport()
+    {
+        $this->is_has_report = Attendance::whereYear('date', $this->year)->whereMonth('date', $this->month)->exists();
+    }
 
     private function setCurrentDateAndYear()
     {
