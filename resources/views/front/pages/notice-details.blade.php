@@ -13,15 +13,17 @@
                     <p class="mt-5">{{ $notice->created_at->format('d M Y h:i A') }}</p>
                     <p class="text-lg mt-7">{!! $notice->content ?? '' !!}</p>
                </div>
-               <div class="space-y-5 mt-5">
-                    @foreach($notice->contentsUrl() as $file)
-                        @if($file['extension'] === 'pdf')
-                            <embed src="{{ $file['url'] }}" type="application/pdf" width="100%" height="800px">
-                        @else 
-                            <img class="block w-full h-auto" src="{{ $file['url'] }}">
-                        @endif
-                    @endforeach
-                </div>
+               if(count($notice->contentsUrl()) > 0)
+                <div class="space-y-5 mt-5">
+                        @foreach($notice->contentsUrl() as $file)
+                            @if($file['extension'] === 'pdf')
+                                <embed src="{{ $file['url'] }}" type="application/pdf" width="100%" height="800px">
+                            @else 
+                                <img class="block w-full h-auto" src="{{ $file['url'] }}">
+                            @endif
+                        @endforeach
+                    </div>
+                @endif
 
                 @if($notice->is_include_principal_signature)
 
