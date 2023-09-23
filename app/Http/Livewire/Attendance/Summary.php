@@ -21,7 +21,7 @@ class Summary extends Component
     public $month;
     public $year;
 
-    public $is_report_has = false;
+    public $is_has_report = false;
 
 
     public function mount()
