@@ -68,11 +68,43 @@
     }
 
 
+    function isLeaveToday($day)
+    {
+        return in_array($day, config('leave.leave_days'));
+    }
+
+    function getMonthName($monthNumeric) {
+        $months = array(
+            1 => 'January',
+            2 => 'February',
+            3 => 'March',
+            4 => 'April',
+            5 => 'May',
+            6 => 'June',
+            7 => 'July',
+            8 => 'August',
+            9 => 'September',
+            10 => 'October',
+            11 => 'November',
+            12 => 'December'
+        );
+
+        if (array_key_exists($monthNumeric, $months)) {
+            return $months[$monthNumeric];
+        } else {
+            return '';
+        }
+    }
+
+
     $target_month = request()->month;
     $target_year = request()->year;
 
 
     $teaders_list = \App\Models\Attendance::select('name')->groupBy('name')->get();
+
+    $school_name = \App\Models\Setting::where('name', 'name_en')->first()->value;
+    $school_address = \App\Models\Setting::where('name', 'address_en')->first()->value;
 
 @endphp
 
@@ -91,26 +123,43 @@
             td,th {
                 border: 1px solid #000; /* Set border width to 1px for cells */
                 padding: 2px; /* Set minimal cell padding */
-                font-size: 14px; /* Set font size to 10px */
+                font-size: 9px; /* Set font size to 10px */
             }
+
+            .vertical-center {
+                vertical-align: middle;
+            }
+
         </style>
     </head>
 <body>
     <main class="mx-auto">
 
-        <table>
+        <h1 class="text-center font-bold text-6xl mt-10">{{ $school_name }}</h1>
+        <h3 class="text-center text-3xl mt-3">{{ $school_address }}</h3>
+
+        <h2 class="text-center text-5xl mt-5">Teacher & Staff Attendance Report, {{ getMonthName($target_month) }}-{{ $target_year }}</h2>
+
+        <table class="mt-10">
             <thead>
-                <th>#</th>
-                <th>Teacher Name</th>
-                @foreach(getDaysOfMonth($target_year, $target_month) as $date)
-                    <th>{{ $date }}</th>
-                @endforeach
+                <tr>
+                    <th rowspan="2" clas="text-lg">#</th>
+                    <th rowspan="2" class="text-lg">Teacher Name</th>
+                    @foreach(getDaysOfMonth($target_year, $target_month) as $date)
+                        <th class="text-md">{{ \Carbon\Carbon::parse($date)->format('d M y') }}</th>
+                    @endforeach
+                </tr>
+                <tr>
+                    @foreach(getDaysOfMonth($target_year, $target_month) as $date)
+                        <th>{{ getDayName($date) }}</th>
+                    @endforeach
+                </tr>
             </thead>
             <tbody>
                 @foreach($teaders_list as $_teacher)
                     <tr>
-                        <td>{{ ++$loop->index }}</td>
-                        <td class="whitespace-nowrap">{{ $_teacher->name }}</td>
+                        <td class="text-lg">{{ ++$loop->index }}</td>
+                        <td class="whitespace-nowrap text-center vertical-center vertical-center text-lg px-2">{{ $_teacher->name }}</td>
                         @foreach(getDaysOfMonth($target_year, $target_month) as $date)
 
                             @php 
@@ -118,17 +167,24 @@
                                 $attendance = \App\Models\Attendance::whereDate('date', $date)->where('name', $_teacher->name)->first();
                             @endphp
 
-                            <td class="whitespace-nowrap">
+                           
                                 @if($attendance)
-                                    <span class="block">Date - @if($attendance->date) {{ $attendance->date->format('d-m-y') }} @endif</span>
-                                    <span class="block">In - @if($attendance->clock_in) {{ $attendance->clock_in->format('h:i A') }} @endif</span>
-                                    <span class="block">Out -  @if($attendance->clock_out) {{ $attendance->clock_out->format('h:i A') }} @endif</span>
-                                    <span class="block">Late -  </span>
-                                    <span class="block">Work -  </span>
+                                    <td class="whitespace-nowrap ">
+                                        <span class="block">In - @if($attendance->clock_in) {{ $attendance->clock_in->format('h:i A') }} @endif</span>
+                                        <span class="block">Out -  @if($attendance->clock_out) {{ $attendance->clock_out->format('h:i A') }} @endif</span>
+                                        <span class="block">Late -  </span>
+                                        <span class="block">Work -  </span>
+                                    </td>
                                 @else 
-                                    'Absent'
+                                    <td class="whitespace-nowrap text-center">
+                                        @if(isLeaveToday(getDayName($date)))
+                                            {{ getDayName($date) }}
+                                        @else 
+                                            X
+                                        @endif
+                                    </td>
                                 @endif
-                            </td>
+                           
                         @endforeach
                     </tr>
                 @endforeach
@@ -136,6 +192,12 @@
 
         </table>
     </mian>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            window.print();
+        });
+    </script>
 </body>
 </html>
 
