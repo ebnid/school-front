@@ -133,7 +133,7 @@
 <body>
     <main class="max-w-4xl mx-auto pb-10">
 
-        <h1 class="text-center font-bold text-3xl mt-7">{{ $school_name }}</h1>
+        <h1 class="text-center font-bold text-2xl mt-7">{{ $school_name }}</h1>
         <h3 class="text-center text-xl mt-3">{{ $school_address }}</h3>
 
         <h2 class="text-center text-2xl mt-3">Attendance Report of {{ $target_teacher_name }}, {{ getMonthName($target_month) }}-{{ $target_year }}</h2>
