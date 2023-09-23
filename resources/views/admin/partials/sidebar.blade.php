@@ -99,6 +99,9 @@
             <a href="{{ route('attendances.summary') }}" class="border-l cursor-pointer flex items-center text-sm py-1 px-3 hover:bg-gray-700" >
                 Summery
             </a>
+            <a href="{{ route('attendances.delete') }}" class="border-l cursor-pointer flex items-center text-sm py-1 px-3 hover:bg-gray-700" >
+                Delete
+            </a>
         </div>
     </div>
 

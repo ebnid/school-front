@@ -1,5 +1,5 @@
 <div class="bg-white rounded-md mx-auto px-10 py-12">
-    <h1 class="text-2xl font-bold mb-5">Summary</h1>
+    <h1 class="text-2xl font-bold mb-5">Delete Attendances</h1>
     <div class="space-y-5">
         <div>
             <label for="year" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Year</label>
@@ -24,12 +24,12 @@
 
     @if($is_has_report)
         <div class="py-10 flex justify-center">
-            <a href="{{ route('attendances.print-summary', ['year' => $year, 'month' => $month]) }}" class="inline-flex items-center px-4 py-2 bg-gray-800 border border-transparent rounded-md font-semibold text-xs text-white uppercase tracking-widest hover:bg-gray-700 focus:bg-gray-700 active:bg-gray-900 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2 transition ease-in-out duration-150">Print</a>
+           <x-button wire:click.debounce="startDelete" type="button">Start Deleting</x-button>
         </div>
     @else 
     <div class="p-4 mb-4 mt-10 text-sm text-blue-800 rounded-lg bg-blue-50 dark:bg-gray-800 dark:text-blue-400" role="alert">
         <span class="font-medium">There is no reports found on this date!</span>
     </div>
     @endif
-    <x-ui.text-loading-spinner wire:loading wire:loading.flex wire:target="year, month"  loadingText="Loading..."/>
+    <x-ui.text-loading-spinner wire:loading wire:loading.flex wire:target="startDelete, year, month"  loadingText="Loading..."/>
 </div>

@@ -1,4 +1,5 @@
 <div class="bg-white rounded-md mx-auto px-10 py-12">
+    <h1 class="text-2xl font-bold mb-5">Single Person Details</h1>
     <div class="space-y-5">
         <div>
             <label for="year" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Year</label>

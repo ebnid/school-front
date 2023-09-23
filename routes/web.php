@@ -57,6 +57,7 @@ Route::middleware([
 
     // Attendances
     Route::view('/attendances/import', 'admin.pages.attendances.import')->name('attendances.import');
+    Route::view('/attendances/delete', 'admin.pages.attendances.delete-attendance')->name('attendances.delete');
     Route::view('/attendances/teachers', 'admin.pages.attendances.teachers')->name('attendances.teachers');
     Route::view('/attendances/summery', 'admin.pages.attendances.summary')->name('attendances.summary');
     Route::view('/attendances/summery/print/{year}/{month}', 'admin.pages.attendances.print-summary')->name('attendances.print-summary');
