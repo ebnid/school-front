@@ -32,7 +32,7 @@
                     @endphp
 
                     <div class="max-w-3xl mx-auto">
-                        <div class="mt-8 w-1/3 flex flex-col items-center">
+                        <div class="w-1/3 flex flex-col items-center">
                             <img class="w-2/3 block" src="{{ $prinicpal_signature }}">
                             <h2 class="text-lg font-bold">মোহাম্মদ আবদুল হালিম</h2>  
                             <p class="text-md">অধ্যক্ষ</p>
