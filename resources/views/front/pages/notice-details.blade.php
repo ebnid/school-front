@@ -22,6 +22,21 @@
                         @endif
                     @endforeach
                 </div>
+
+                @if($notice->is_include_principal_signature)
+
+                    @php 
+                        $prinicpal_signature = _Setting::where('name', 'principal_signature')->first()->principalSignatureUrl();
+                    @endphp
+
+                    <div class="mt-20 w-1/3 flex flex-col items-center">
+                        <img class="w-1/2 block" src="{{ $prinicpal_signature }}">
+                        <h2>মোহাম্মদ আবদুল হালিম</h2>  
+                        <p>অধ্যক্ষ</p>
+                        <p>উচাখিলা উচ্চ মাধ্যমিক বিদ্যালয় ও কলেজ</p>
+                        <p>ঈশ্বরগঞ্জ, ময়মনসিংহ</p>
+                    </div>
+                @endif
             </div>
         </div>
     </section>
