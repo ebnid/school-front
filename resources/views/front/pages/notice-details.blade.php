@@ -26,7 +26,7 @@
                 @if($notice->is_include_principal_signature)
 
                     @php 
-                        $prinicpal_signature = _Setting::where('name', 'principal_signature')->first()->principalSignatureUrl();
+                        $prinicpal_signature = \App\Models\Setting::where('name', 'principal_signature')->first()->principalSignatureUrl();
                     @endphp
 
                     <div class="mt-20 w-1/3 flex flex-col items-center">
