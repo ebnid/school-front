@@ -1,3 +1,3 @@
 <a href="/">
-    <img class="" src="https://www.ebnhost.com/assets/img/logo.png" alt="">
+    <img class="" src="{{ asset('assets/images/logo-uchakhila-high-school.png') }}" alt="Uchakhila High School">
 </a>
