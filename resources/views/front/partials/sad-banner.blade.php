@@ -1,5 +1,5 @@
 
-<section class="font-bangla bg-white rounded-md grid grid-cols-1 md:grid-cols-5 px-10 py-6 gap-10">
+<section class="container mx-auto px-5 font-bangla bg-white rounded-md grid grid-cols-1 md:grid-cols-5 px-10 py-6 gap-10">
     <img class="object-cover block" src="{{ asset('assets/images/rojon-chondro-dash.jpg') }}" alt="">
     <div class="md:col-span-4">
         <h1 class="title-font sm:text-4xl text-3xl mb-4 font-medium text-gray-900">আমরা শোকাহত</h1>
