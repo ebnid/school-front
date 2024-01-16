@@ -9,6 +9,10 @@
     </section>
 
     <section class="mt-5">
+        @include('front.partials.sad-banner')
+    </section>
+
+    <section class="mt-5">
         @include('front.partials.message-of-principal')
     </section>
 
