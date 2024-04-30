@@ -79,7 +79,7 @@ Route::get('/', function(){
 
 // Static Page
 
-Route::view('/governing-body', 'admin.pages.static.governing-body');
+Route::view('/governing-body', 'front.pages.static.governing-body');
 Route::view('/monitoring-board', 'front.pages.monitoring-board')->name('monitoring-baord');
 Route::view('/teachers', 'front.pages.teachers')->name('teacher-list');
 Route::view('/staffs', 'front.pages.staffs')->name('staff-list');
