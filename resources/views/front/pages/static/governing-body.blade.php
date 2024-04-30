@@ -14,9 +14,9 @@
 
                 <div class="space-y-5 mt-5">
 
-                        <embed src="{{ asset('assets/pages/governing-body.pdf') }}" type="application/pdf" width="100%" height="800px">
+                        {{-- <embed src="{{ asset('assets/pages/governing-body.pdf') }}" type="application/pdf" width="100%" height="800px"> --}}
 
-                        {{-- <img class="block w-full h-auto" src=""> --}}
+                        <img class="block w-full h-auto" src="{{ asset('assets/pages/governing-body.jpg') }}">
 
                 </div>
 
