@@ -2,7 +2,7 @@
     <div class="container mx-auto">
         <nav class="flex items-center h-16 justify-between">
 
-            @php 
+            @php
 
                 $addmission_button_text = \App\Models\Setting::where('name', 'admission_button_text')->first();
                 $addmission_button_link = \App\Models\Setting::where('name', 'admission_button_link')->first();
@@ -11,16 +11,16 @@
 
             <!-- Logo -->
             <h1>
-                <a target="_blank" href="{{ $addmission_button_link->value }}" class="text-white flex flex-col border rounded-full px-4 py-2">
+                <a target="_blank" href="{{ $addmission_button_link->value }}" class="text-white flex flex-col text-sm border rounded-full px-4 py-2">
                     <span class="text-sm md:text-xl">{{ $addmission_button_text->value }}</span>
                 </a>
             </h1>
 
             <!-- Menu -->
             <div class="ml-auto hidden lg:block">
-                <ul class="flex text-md">
+                <ul class="flex text-xs">
 
-                    @php 
+                    @php
 
                         $menus = \App\Models\Menu::published()->where('parent_id', null)->orderBy('order')->get();
 
@@ -29,11 +29,11 @@
 
                     @foreach($menus as $menu)
 
-                        @php 
+                        @php
 
                             $children = \App\Models\Menu::published()->where('parent_id', $menu->id)->orderBy('order')->get();
 
-                        @endphp 
+                        @endphp
 
 
                         @if(!count($children) > 0)
@@ -42,7 +42,7 @@
                                     <span>{{ $menu->name }}</span>
                                 </a>
                             </li>
-                        @else 
+                        @else
                             <li class="relative group z-40">
                                 <a class="cursor-pointer text-white hover:text-white hover:bg-sky-700  py-2 px-3 block flex items-center gap-1">
                                     <span>{{ $menu->name }}</span>
@@ -56,11 +56,11 @@
                                 <ul class="group-hover:block absolute hidden top-full w-52 border border-sky-900 rounded-md left-0 bg-sky-800 py-2 space-y-2">
                                     @foreach($children as $child)
 
-                                        @php 
+                                        @php
 
                                             $grandChildren = \App\Models\Menu::published()->where('parent_id', $child->id)->orderBy('order')->get();
-                                        
-                                        @endphp 
+
+                                        @endphp
 
                                         @if(!count($grandChildren))
                                             <li id="child-menu-item" class="relative">
@@ -68,7 +68,7 @@
                                                     <span>{{ $child->name }}</span>
                                                 </a>
                                             </li>
-                                        @else 
+                                        @else
                                             <li id="child-menu-item" class="relative">
                                                 <a class="cursor-pointer text-white  py-1 pl-4 block hover:text-white hover:bg-sky-700 flex items-center gap-2">
                                                     <span>{{ $child->name }}</span>
@@ -114,7 +114,7 @@
             </div>
             <!-- Login Links -->
             <div class="ml-3">
-                <button id="dropdownMenuIconButton" data-dropdown-toggle="dropdownDots" class="inline-flex items-center p-2 text-sm font-medium text-center text-gray-900 bg-white rounded-lg hover:bg-gray-100 focus:ring-4 focus:outline-none dark:text-white focus:ring-gray-50 dark:bg-gray-800 dark:hover:bg-gray-700 dark:focus:ring-gray-600" type="button"> 
+                <button id="dropdownMenuIconButton" data-dropdown-toggle="dropdownDots" class="inline-flex items-center p-2 text-sm font-medium text-center text-gray-900 bg-white rounded-lg hover:bg-gray-100 focus:ring-4 focus:outline-none dark:text-white focus:ring-gray-50 dark:bg-gray-800 dark:hover:bg-gray-700 dark:focus:ring-gray-600" type="button">
                     <svg class="w-5 h-5" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 4 15">
                         <path d="M3.5 1.5a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0Zm0 6.041a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0Zm0 5.959a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0Z"/>
                     </svg>
