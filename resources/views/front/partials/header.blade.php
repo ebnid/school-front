@@ -12,13 +12,13 @@
             <!-- Logo -->
             <h1>
                 <a target="_blank" href="{{ $addmission_button_link->value }}" class="text-white flex flex-col border rounded-full px-3 py-1">
-                    <span class="text-sm md:text-md">{{ $addmission_button_text->value }}</span>
+                    <span class="text-sm md:text-md font-bold">{{ $addmission_button_text->value }}</span>
                 </a>
             </h1>
 
             <!-- Menu -->
             <div class="ml-auto hidden lg:block">
-                <ul class="flex text-sm">
+                <ul class="flex text-md">
 
                     @php
 
