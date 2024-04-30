@@ -23,9 +23,6 @@ Route::middleware([
 
     Route::view('/dashboard', 'admin.pages.dashboard')->name('dashboard');
 
-    // Static Page
-    Route::view('/governing-body', 'admin.pages.static.governing-body');
-
     // Profile
     Route::view('/profile/profile', 'admin.pages.profile.profile')->name('profile.profile');
     Route::view('/profile/security', 'admin.pages.profile.security')->name('profile.security');
@@ -82,6 +79,7 @@ Route::get('/', function(){
 
 // Static Page
 
+Route::view('/governing-body', 'admin.pages.static.governing-body');
 Route::view('/monitoring-board', 'front.pages.monitoring-board')->name('monitoring-baord');
 Route::view('/teachers', 'front.pages.teachers')->name('teacher-list');
 Route::view('/staffs', 'front.pages.staffs')->name('staff-list');
