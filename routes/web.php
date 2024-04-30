@@ -19,9 +19,12 @@ Route::middleware([
     config('jetstream.auth_session'),
     'verified',
 ])->group(function () {
-    
+
 
     Route::view('/dashboard', 'admin.pages.dashboard')->name('dashboard');
+
+    // Static Page
+    Route::view('/governing-body', 'admin.pages.static.governing-body');
 
     // Profile
     Route::view('/profile/profile', 'admin.pages.profile.profile')->name('profile.profile');
@@ -33,7 +36,7 @@ Route::middleware([
 
     // Caurosels
     Route::view('/caurosels', 'admin.pages.caurosels.create')->name('caurosels.create');
-    
+
     // Menus
     Route::view('/menus', 'admin.pages.menus.create')->name('menus.create');
 
