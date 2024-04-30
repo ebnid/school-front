@@ -18,7 +18,7 @@
 
             <!-- Menu -->
             <div class="ml-auto hidden lg:block">
-                <ul class="flex text-xs">
+                <ul class="flex text-sm">
 
                     @php
 
