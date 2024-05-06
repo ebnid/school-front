@@ -9,7 +9,7 @@
             <h1 class="text-sky-900 text-center mb-6 text-2xl md:text-4xl font-extrabold md:text-3xl leading-none tracking-tight">{{ $page->name }} <span class="text-blue-600 dark:text-blue-500"></span></h1>
 
             @if($page->excerpt)
-                <p class="mt-10 text-center mb-10">{{ $page->excerpt }}</p>
+                <p class="text-lg mt-10 text-center mb-10">{{ $page->excerpt }}</p>
             @endif
 
             @if(count($page->contentsUrl()) > 0)
