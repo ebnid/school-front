@@ -23,7 +23,7 @@
                     <thead class="text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-gray-400">
                         <tr>
                             <th scope="col" class="px-4 py-3">Name</th>
-                            <th scope="col" class="px-4 py-3">Slug</th>
+                            <th scope="col" class="px-4 py-3">Preview Url</th>
                             <th scope="col" class="px-4 py-3">Status</th>
                             <th scope="col" class="px-4 py-3">
                                 <span class="sr-only">Actions</span>
@@ -34,7 +34,7 @@
                         @foreach($pages ?? [] as $page)
                         <tr class="border-b dark:border-gray-700">
                             <td class="px-4 py-3">{{ $page->name ?? '' }}</td>
-                            <td class="px-4 py-3">{{ $page->slug ?? '' }}</td>
+                            <td class="px-4 py-3">{{ route('page', ['page_slug' => $page->slug ?? '']) }}</td>
                             <td class="px-4 py-3">
                                 @if($page->is_published)
                                     <span class="bg-green-100 text-green-800 text-xs font-medium mr-2 px-2.5 py-0.5 rounded dark:bg-green-900 dark:text-green-300">Published</span>
