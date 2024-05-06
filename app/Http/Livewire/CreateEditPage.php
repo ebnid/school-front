@@ -25,6 +25,10 @@ class CreateEditPage extends Component
 
     public $page_id;
 
+    // pdf contents
+    public $contents = [];
+    public $old_contents = [];
+
 
     protected $rules = [
         'name' => ['required', 'string', 'unique:pages'],
