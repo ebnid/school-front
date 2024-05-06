@@ -111,7 +111,7 @@ class CreateEditPage extends Component
 
             foreach($this->contents as $file)
             {
-                $notice->addMedia($file)->toMediaCollection('contents');
+                $page->addMedia($file)->toMediaCollection('contents');
             }
 
         }
@@ -152,7 +152,7 @@ class CreateEditPage extends Component
 
             foreach($this->contents as $file)
             {
-                $notice->addMedia($file)->toMediaCollection('contents');
+                $page->addMedia($file)->toMediaCollection('contents');
             }
 
         }
@@ -179,7 +179,7 @@ class CreateEditPage extends Component
         $this->meta_description = $page->meta_description;
         $this->is_published = $page->is_published;
 
-        $this->old_contents = $notice->getMedia('contents');
+        $this->old_contents = $page->getMedia('contents');
 
         $this->dispatchBrowserEvent('tinymce:set:content', $this->content);
 
