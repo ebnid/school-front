@@ -10,19 +10,20 @@
 
             @if($page->excerpt)
                 <p class="mt-10">{{ $page->excerpt }}</p>
-            @endphp
+            @endif
 
-            @if(count($notice->contentsUrl()) > 0)
+            @if(count($page->contentsUrl()) > 0)
 
-            <div class="space-y-5 mt-5">
-                    @foreach($page->contentsUrl() as $file)
-                        @if($file['extension'] === 'pdf')
-                            <embed src="{{ $file['url'] }}" type="application/pdf" width="100%" height="800px">
-                        @else
-                            <img class="block w-full h-auto" src="{{ $file['url'] }}">
-                        @endif
-                    @endforeach
+                <div class="space-y-5 mt-5">
+                        @foreach($page->contentsUrl() as $file)
+                            @if($file['extension'] === 'pdf')
+                                <embed src="{{ $file['url'] }}" type="application/pdf" width="100%" height="800px">
+                            @else
+                                <img class="block w-full h-auto" src="{{ $file['url'] }}">
+                            @endif
+                        @endforeach
                 </div>
+
             @endif
 
             <div class="space-y-5 text-justify">
