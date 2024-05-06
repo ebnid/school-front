@@ -149,7 +149,7 @@
     </div>
 
 
-    <x-ui.loading-spinner wire:loading.flex wire:target="cancelEditMode, createPage, updatePage" />
+    <x-ui.loading-spinner wire:loading.flex wire:target="cancelEditMode, createPage, updatePage, contents, removeAllContents, removeContentOf, removeExistingContentOf" />
 </div>
 
 
