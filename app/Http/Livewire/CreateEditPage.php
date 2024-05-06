@@ -6,10 +6,12 @@ use Livewire\Component;
 use Illuminate\Support\Str;
 use App\Traits\WithSweetAlert;
 use App\Models\Page;
+use Livewire\WithFileUploads;
 
 class CreateEditPage extends Component
 {
     use WithSweetAlert;
+    use WithFileUploads;
 
     public $is_edit_mode_on = false;
 
@@ -51,6 +53,42 @@ class CreateEditPage extends Component
         $this->slug = Str::slug($value);
     }
 
+    public function removeExistingContentOf($id)
+    {
+        $this->old_contents = $this->old_contents->reject(function($file) use($id){
+            if($file->id === $id){
+                $file->delete();
+                return true;
+            }
+
+            return false;
+        });
+    }
+
+
+    public function removeContentOf($id)
+    {
+        $this->contents = array_filter($this->contents, function($content, $index) use($id){
+            if($index === $id){
+                $content->delete();
+                return false;
+            }
+
+            return true;
+        }, ARRAY_FILTER_USE_BOTH);
+    }
+
+
+    public function removeAllContents()
+    {
+        foreach($this->contents as $content){
+            $content->delete();
+        }
+
+        $this->contents = [];
+    }
+
+
     public function createPage()
     {
         $this->validate();
@@ -67,6 +105,17 @@ class CreateEditPage extends Component
         $page->meta_description = $this->meta_description;
 
         if(!$page->save()) return $this->error('Failed', 'Failed to create new page. Something went wrong.');
+
+
+        if(count($this->contents) > 0){
+
+            foreach($this->contents as $file)
+            {
+                $notice->addMedia($file)->toMediaCollection('contents');
+            }
+
+        }
+
 
         $this->reset();
         $this->emit('onPageCreated');
@@ -98,6 +147,16 @@ class CreateEditPage extends Component
 
         if(!$page->save()) return $this->error('Failed', 'Failed to updated page. Something went wrong.');
 
+
+        if(count($this->contents) > 0){
+
+            foreach($this->contents as $file)
+            {
+                $notice->addMedia($file)->toMediaCollection('contents');
+            }
+
+        }
+
         $this->reset();
         $this->emit('onPageUpdated');
         $this->dispatchBrowserEvent('tinymce:clear');
@@ -119,6 +178,8 @@ class CreateEditPage extends Component
         $this->meta_tags = $page->meta_tags;
         $this->meta_description = $page->meta_description;
         $this->is_published = $page->is_published;
+
+        $this->old_contents = $notice->getMedia('contents');
 
         $this->dispatchBrowserEvent('tinymce:set:content', $this->content);
 

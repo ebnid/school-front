@@ -49,7 +49,7 @@
 
 
         <div class="mt-5">
-            <x-label for="" class="mb-1 block" value="{{ __('Pdf Contents') }}" />
+            <x-label for="" class="mb-1 block" value="{{ __('Pdf/Image Contents') }}" />
             @if($old_contents)
                 <ul class="space-y-2">
                     @foreach($old_contents as  $file)
