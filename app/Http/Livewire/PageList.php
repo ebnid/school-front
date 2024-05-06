@@ -63,7 +63,7 @@ class PageList extends Component
                   ->orWhere('name', $search);
         });
 
-        return $query->paginate(25);
+        return $query->latest()->paginate(25);
 
     }
 }
