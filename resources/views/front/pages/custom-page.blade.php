@@ -17,7 +17,7 @@
                 <div class="space-y-5 mt-5">
                         @foreach($page->contentsUrl() as $file)
                             @if($file['extension'] === 'pdf')
-                                <embed src="{{ $file['url'] }}" type="application/pdf" width="100%" height="800px">
+                                <embed src="{{ $file['url'] }}" type="application/pdf" width="100%" height="1000px">
                             @else
                                 <img class="block w-full h-auto" src="{{ $file['url'] }}">
                             @endif
